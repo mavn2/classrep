@@ -62,16 +62,6 @@ figure {
     background-size: cover;
     background-position: center;
 }
-/*Main Content Images*/
-.float-left {
-    float: left;
-    margin-right: 25px;
-}
-
-.float-right {
-    float: right;
-    margin-left: 25px;
-}
 
 /*Main Content*/
 main {
@@ -89,15 +79,26 @@ main {
     color: #ffffff;
 }
 
+.main h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/*Main Content Images*/
+.float-left {
+    float: left;
+    margin-right: 25px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 25px;
+}
 
 .main img {
     max-height: 200px;
 }
 
-.main h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-}
 
 /*Sidebar Content*/
 aside {

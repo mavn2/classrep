@@ -75,7 +75,7 @@ main {
     margin-left: 20px;
 }
 
-article {
+.main {
     margin-bottom: 20px;
     padding: 50px;
     height: 300px;
@@ -85,11 +85,11 @@ article {
 }
 
 
-article img {
+.main img {
     max-height: 200px;
 }
 
-article h2 {
+.main h2 {
     margin-bottom: 20px;
     font-size: 36px;
 }
@@ -105,17 +105,17 @@ aside {
     background-color: #2589bd;
 }
 
-section {
+.side {
     margin-bottom: 32px;
     color: #ffffff;
 }
 
-section h2 {
+.side h2 {
     margin-bottom: 10px;
     text-align: center;
 }
 
-section img {
+.side img {
     display: block;
     margin: 10px auto;
     max-width: 150px;

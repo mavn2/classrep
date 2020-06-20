@@ -1,7 +1,16 @@
-body{
+body {
+    min-height: 2000px;
     padding-top: 70px;
 }
-.navbar-header h1{
+
+.navbar {
+    margin-bottom: 20px;
+}
+.navbar-header h1 {
     color: white;
 
 }
+.panel{
+    padding-top: 50px;
+}
+

@@ -5,11 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <!--I know this is an absurd amount of stylesheets. I had a rough time getting consistent results at the start of this project, and now if I try to remove some of them my navbar breaks and I can't tell why. I'd like to fix that, but it's low priority to me compared to getting everything running.-->
     <!--Bootstrap Base CSS and Theme-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!--Personal CSS-->
     <link rel="stylesheet" href=style.css>
 </head>
@@ -26,36 +23,31 @@
     <!--The ul here is the bar itself-->
         <div class = "container">
             <ul class="nav nav-pills">
-                <li role="presentation"><a href="index.html">About</a></li>
-                <li role="presentation"><a href="portfolio.html">Portfolio</a></li> 
-                <li role="presentation"><a href="contact.html">Contact</a></li>
+              <li role="presentation"><a href="index.html">About</a></li>
+              <li role="presentation"><a href="portfolio.html">Portfolio</a></li> 
+              <li role="presentation"><a href="contact.html">Contact</a></li>
             </ul>
         </div>  
     </nav>
-    
-    <main class = "container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">About Me</h3>
-            </div>
-            <div class="panel-body">
-                <div class = container>
-                    <div class="row">
-                      <div class="col-md-1">
-                        <img id="purple" src="http://www.flowermuse.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/p/u/purple-dahlia-flower-1.jpg"  alt="A purple dahlia">
-                      </div>
-                      <div class="col-md-4".>
-                        <article>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet risus laoreet, eleifend odio eu, lobortis neque. Sed dictum metus ut sollicitudin mattis. Nulla interdum commodo orci nec ornare. Cras blandit, nisi quis lacinia dictum, felis nunc luctus nunc, et facilisis ipsum urna ut est. Quisque posuere velit libero, eu cursus tellus scelerisque vitae. Nam magna nisi, condimentum fermentum interdum a, luctus accumsan urna. Phasellus semper eros in dictum ullamcorper. Pellentesque elementum sem augue, vitae euismod nulla vehicula vel. Morbi at feugiat ex, vitae faucibus mi.</p>
-                        </article>
-                    </div>
-                    </div>
-                </div>
-            </div>
-    
-            
+
+    <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object" src="..." alt="...">
+          </a>
         </div>
-        
-    </main>
+        <div class="media-body">
+          <h4 class="media-heading">Media heading</h4>
+          ...
+        </div>
+      </div>
+
+    <!--Bootstrap JS links-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
 </body>
 </html>

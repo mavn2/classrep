@@ -39,8 +39,12 @@ main{
 
 #bio .card{
     background-color: ghostwhite;
-
 }
+
+article{
+    margin-left: 5px;
+}
+
 
 /*Style for Contact page*/
 #con{

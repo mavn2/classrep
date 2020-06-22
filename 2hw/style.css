@@ -1,3 +1,34 @@
+/*These are placeholder colors! I'm red/green colorblind, but it affects my perception
+of a variety of colors/shades. To be safe, I'm picking things that seem good but mainly
+distinct, and I'll redo it to taste when I can get someone on zoom to make sure I'm not
+confusing things.*/
+
+/*Page Background*/
+body{
+    background-color: turquoise;
+}
+/*Universal style for page bodies*/
 main{
-    padding-top: 30px;
+    margin-top: 30px;
+    max-width: 700px;
+    background-color: white;
+}
+/*Style for page headers*/
+.head{
+    border-bottom-style: solid;
+    border-width: thin;
+    background-color: violet;
+}
+.head h2{
+    vertical-align: middle;
+}
+/*Style for the About Me card, distinct from Portfolio cards*/
+#bio{
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+/*Style for contact form*/
+#con{
+    margin-top: 10px;
 }

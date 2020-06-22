@@ -30,13 +30,13 @@ on a variety of mobile phones and tablets.
 
 ## Credits
 
-Thanks my teacher, TAs and classmates at the UW Full Stack Development Bootcamp.
+Thanks to my teacher, TAs and classmates at the UW Full Stack Development Bootcamp.
 Thanks to Katie Frances for this guide to customizing the Bootstrap navbar
     [https://medium.com/coder-grrl/the-guide-to-customising-the-bootstrap-4-navbar-i-wish-id-had-6-months-ago-7bc6ce0e3c71]
     (https://medium.com/coder-grrl/the-guide-to-customising-the-bootstrap-4-navbar-i-wish-id-had-6-months-ago-7bc6ce0e3c71)
 
 and to those maintaining [https://imagecolorpicker.com/en/](https://imagecolorpicker.com/en/). 
-Thanks to GF and CP for directing me to those resources-if I knew my classmates git pages I'd link them.
+Thanks to GF and CP for directing me to those resources-if I knew my classmates' git pages I'd link them here.
 Last, of course, thanks and credit to Bootstrap for their code and extensive documentation.
 
 

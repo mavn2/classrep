@@ -1,34 +1,50 @@
-/*These are placeholder colors! I'm red/green colorblind, but it affects my perception
-of a variety of colors/shades. To be safe, I'm picking things that seem good but mainly
-distinct, and I'll redo it to taste when I can get someone on zoom to make sure I'm not
-confusing things.*/
+/*These colors might be off: I'm red/green colorblind, not extremely but badly enough I routinely misread shades.
+I pulled these colors from my desktop background, which has a palette I really like, but I don't have anyone
+around right now to tell me if I've misinterpretted them or how they're rendered through the color values below.
+I just wanted to tell you in case something, maybe, clashes horribly.*/
 
 /*Page Background*/
 body{
-    background-color: turquoise;
+    padding-top: 65px;
+    background-color: #e5e5ed;
 }
 /*Universal style for page bodies*/
 main{
     margin-top: 30px;
     max-width: 700px;
-    background-color: white;
+    background-color: ghostwhite;
 }
 /*Style for page headers*/
 .head{
     border-bottom-style: solid;
     border-width: thin;
-    background-color: violet;
+    background-color: #afbee1;
 }
 .head h2{
     vertical-align: middle;
 }
 /*Style for the About Me card, distinct from Portfolio cards*/
 #bio{
-    max-width: 700px;
+    
     margin-top: 10px;
 }
 
-/*Style for contact form*/
+#bio .card{
+    background-color: ghostwhite;
+
+}
+
+/*Style for Contact page*/
 #con{
     margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*Style for Portoflio Page*/
+.card-link{
+    text-decoration: underline;
+    color: black;
+}
+.card-footer{
+    background-color: #d3e4fb;
 }

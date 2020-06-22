@@ -7,19 +7,20 @@
     <title>Contact</title>
     <!--Bootstrap Base CSS and Theme-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <!--Personal Stylesheet-->
-        <link rel="stylesheet" href=style.css>
+    <!--Personal Stylesheet-->
+    <link rel="stylesheet" href=style.css>
 </head>
 
 <body>
+  <!--Navbar Header and Button-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
         <a class="navbar-brand">Max Nicolai</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+  <!--Navbar Links-->
             <li class="nav-item">
               <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
             </li>
@@ -31,40 +32,45 @@
             </li>
           </ul>
         </div>
-      </nav>
-    <main class="container">
-            <div class="row justify-content-start">
-                <div class="col-md head">
-                  <h2>Contact</h2>
-                </div>
-            </div>
-            <div class="row justify-content-start" id="con">
-              <div class="container" id="contact">  
-                <form>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Name</label>
-                        <input type="name" class="form-control" id="FormControlInput1" placeholder="J Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput1">Email address</label>
-                        <input type="email" class="form-control" id="FormControlInput2" placeholder="name@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1"> Message</label>
-                        <textarea class="form-control" id="FormControlTextarea1" rows="3"></textarea>
-                    </div>
-                </form>
-                <input class="btn btn-primary" type="submit" value="Submit">
-              </div>
-            </div>
-    </main>
+    </nav>
+  <!--Contact form. Currently non-functional, as to get it running seemed like it would require work beyond my capabilites. I'll come back once I know more javascript.-->
+  <!--Page Header-->
+  <main class="container">
+    <div class="row justify-content-start">
+      <div class="col-md head">
+        <h2>Contact</h2>
+      </div>
+    </div>
+    <!--Contact form-->
+    <div class="row justify-content-start" id="con">
+      <div class="container" id="contact">  
+        <form>
+          <!--Name Input-->
+          <div class="form-group">
+            <label for="FormControlInput1">Name</label>
+              <input type="name" class="form-control" id="FormControlInput1" placeholder="J Doe">
+          </div>
+          <!--Email Input-->
+          <div class="form-group">
+            <label for="FormControlInput2">Email address</label>
+            <input type="email" class="form-control" id="FormControlInput2" placeholder="name@example.com">
+          </div>
+          <!--Message Input-->
+          <div class="form-group">
+            <label for="FormControlTextarea1"> Message</label>
+              <textarea class="form-control" id="FormControlTextarea1" rows="3"></textarea>
+          </div>
+        </form>
+        <!--Submit/Send button-->
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
+    </div>
+  </main>
 
-    <!--Bootstrap JS links-->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
-</html>
+  <!--Bootstrap JS links-->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>

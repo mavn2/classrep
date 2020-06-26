@@ -1,0 +1,5 @@
+var length = prompt("Please enter (not type) a number between 8 and 128")
+var spec = confirm("Would you like to include special characters?")
+var num = confirm("Would you like to include numbers?")
+var low = confirm("Would you like to include lowercase letters?")
+var hi = confirm("Would you like to include uppercase letters?")

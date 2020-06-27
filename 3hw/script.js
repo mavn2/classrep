@@ -6,7 +6,7 @@ var low = confirm("Would you like to include lowercase letters?");
 var upp = confirm("Would you like to include uppercase letters?");
 
 //Arrays containing characters
-var specA = ["!","@","#","$","%","^","&","*","(",")","-","+",".","/",",","<",">","~","|","?",":",";","{","}","[","]"];
+var specA = ["!","@","#","$","%","^","&","*","(",")","-","+",".","/","<",">","~","|","?",":",";","{","}","[","]"];
 var numA = ["1","2","3","4","5","6","7","8","9"];
 var lowA = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppA = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -38,12 +38,12 @@ if(low === true){
 if(upp === true){
     passC.push(uppA);
 };
-//Delete this KLater!!!!! !!!!!!!!!!!!!!!!      !
-console.log(passC)
+//Delete clean this up!!! this KLater!!!!! !!!!!!!!!!!!!!!!      !
+console.log(passC);
+var passS = passC.toString()
+console.log(passS)
+var passA = passS.split(",")
+console.log(passA)
 //Array to store password as it is generated
-var passF = []
-//Nested for loops to pick characters for passwords
-//checks character number relative to password
-for(i=0; i<lCheck; i++){
-    
-}
+var passF = [];
+

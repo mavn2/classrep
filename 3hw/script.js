@@ -39,12 +39,8 @@ if(upp === true){
     passC.push(uppA);
 }
 //Converts passC to single array
-//Delete clean this up!!! this KLater!!!!! !!!!!!!!!!!!!!!!      !
-console.log(passC);
 var passS = passC.toString();
-console.log(passS);
 var passA = passS.split(",");
-console.log(passA);
 
 //Array to store password as it is generated
 var passF = [];

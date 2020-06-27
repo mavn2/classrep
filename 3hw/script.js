@@ -40,5 +40,10 @@ if(upp === true){
 };
 //Delete this KLater!!!!! !!!!!!!!!!!!!!!!      !
 console.log(passC)
+//Array to store password as it is generated
+var passF = []
 //Nested for loops to pick characters for passwords
-for(i=0;i<lCheck)
+//checks character number relative to password
+for(i=0; i<lCheck; i++){
+    
+}

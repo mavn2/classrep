@@ -32,10 +32,10 @@ if(spec === true){
 if(num === true){
     passC.push(numA);
 };
-if(lowA === true){
+if(low === true){
     passC.push(lowA);
 };
-if(uppA === true){
+if(upp === true){
     passC.push(uppA);
 };
 console.log(passC)

@@ -22,7 +22,7 @@ if(lCheck < 8 || lCheck >  128){
     alert("Please input a number (in numeric form) between 8 and 128! Please refresh page.");
 };
 
-//Preps selected character arrays for selection:
+//Groups selected character arrays:
 //Array to recieve character options
 var passC = [];
 //If statements to add arrays to passC
@@ -37,13 +37,20 @@ if(low === true){
 };
 if(upp === true){
     passC.push(uppA);
-};
+}
+//Converts passC to single array
 //Delete clean this up!!! this KLater!!!!! !!!!!!!!!!!!!!!!      !
 console.log(passC);
 var passS = passC.toString()
 console.log(passS)
 var passA = passS.split(",")
 console.log(passA)
+
 //Array to store password as it is generated
 var passF = [];
 
+//For loop to create password
+for(i=0; i<lCheck; i++){
+    passF.push(passA[(Math.random*passA.length)+1])
+}
+console.log(passF)

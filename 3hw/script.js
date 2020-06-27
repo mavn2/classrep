@@ -41,16 +41,16 @@ if(upp === true){
 //Converts passC to single array
 //Delete clean this up!!! this KLater!!!!! !!!!!!!!!!!!!!!!      !
 console.log(passC);
-var passS = passC.toString()
-console.log(passS)
-var passA = passS.split(",")
-console.log(passA)
+var passS = passC.toString();
+console.log(passS);
+var passA = passS.split(",");
+console.log(passA);
 
 //Array to store password as it is generated
 var passF = [];
 
 //For loop to create password
 for(i=0; i<lCheck; i++){
-    passF.push(passA[(Math.random()*passA.length)+1])
-}
+    passF.push(passA[(Math.floor(Math.random()*passA.length)+1)]);
+};
 console.log(passF)

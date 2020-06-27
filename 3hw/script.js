@@ -51,6 +51,6 @@ var passF = [];
 
 //For loop to create password
 for(i=0; i<lCheck; i++){
-    passF.push(passA[(Math.random*passA.length)+1])
+    passF.push(passA[(Math.random()*passA.length)+1])
 }
 console.log(passF)

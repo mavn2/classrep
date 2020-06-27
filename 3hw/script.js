@@ -53,3 +53,8 @@ for(i=0; i<lCheck; i++){
 //Converts password from array to string
 var passW = passF.join("")
 
+//Setting up DOM commands to display password
+//variable for condensing location of card body div
+var card = document.body.children[1].children[1]
+//var for <p> element 
+var text = card.querySelector("p")

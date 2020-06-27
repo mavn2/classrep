@@ -14,10 +14,28 @@ var uppA = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q",
 //If statement(s) to check for valid user inputs:
 //Makes sure at least one kind of character is selected, and password can be generated
 if(spec === false && num === false && low === false && upp === false){
-    alert("Please select at least one character type! Please refresh page.")
+    alert("Please select at least one character type! Please refresh page.");
 };
 //Converts user input string to number, checks it 
 var lcheck = Number(length)
 if(lcheck < 8 || lcheck >  128){
-    alert("Please input a number (in numeric form) between 8 and 128! Please refresh page.")
-}
+    alert("Please input a number (in numeric form) between 8 and 128! Please refresh page.");
+};
+
+//Preps selected character arrays for selection:
+//Array to recieve character options
+var passC = [];
+//If statements to add arrays to passC
+if(spec === true){
+    passC.push(specA);
+};
+if(num === true){
+    passC.push(numA);
+};
+if(lowA === true){
+    passC.push(lowA);
+};
+if(uppA === true){
+    passC.push(uppA);
+};
+console.log(passC)

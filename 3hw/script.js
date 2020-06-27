@@ -51,6 +51,9 @@ var passF = [];
 
 //For loop to create password
 for(i=0; i<lCheck; i++){
-    passF.push(passA[(Math.floor(Math.random()*passA.length)+1)]);
+    passF.push(passA[Math.floor(Math.random()*passA.length)]);
 };
-console.log(passF)
+
+//Converts password from array to string
+var passW = passF.join("")
+

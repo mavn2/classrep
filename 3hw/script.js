@@ -17,8 +17,8 @@ if(spec === false && num === false && low === false && upp === false){
     alert("Please select at least one character type! Please refresh page.");
 };
 //Converts user input string to number, checks it 
-var lcheck = Number(length)
-if(lcheck < 8 || lcheck >  128){
+var lCheck = Number(length)
+if(lCheck < 8 || lCheck >  128){
     alert("Please input a number (in numeric form) between 8 and 128! Please refresh page.");
 };
 
@@ -38,4 +38,7 @@ if(low === true){
 if(upp === true){
     passC.push(uppA);
 };
+//Delete this KLater!!!!! !!!!!!!!!!!!!!!!      !
 console.log(passC)
+//Nested for loops to pick characters for passwords
+for(i=0;i<lCheck)

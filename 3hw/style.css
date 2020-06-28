@@ -1,6 +1,8 @@
 /*Styling for generator box*/
-.card{
-    max-width: 900px;
+.full-width{
+    padding-left: 0px;
+    padding-right: 0px;
+    
 }
 .card-body{
     border-style: dashed;

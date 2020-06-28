@@ -1,9 +1,18 @@
-//Prompts to determine passwords paramenters
-var length = prompt("Please enter (not type) a number between 8 and 128");
-var spec = confirm("Would you like to include special characters?");
-var num = confirm("Would you like to include numbers?");
-var low = confirm("Would you like to include lowercase letters?");
-var upp = confirm("Would you like to include uppercase letters?");
+//Var for accesing generate button
+var button1 = document.body.querySelector("#generate")
+
+button1.addEventListener("click", function(){
+    password()
+});
+    
+
+//Prompts to determine passwords parameters
+function password(){
+    var length = prompt("Please enter (not type) a number between 8 and 128");
+    var spec = confirm("Would you like to include special characters?");
+    var num = confirm("Would you like to include numbers?");
+    var low = confirm("Would you like to include lowercase letters?");
+    var upp = confirm("Would you like to include uppercase letters?");
 
 //Arrays containing characters
 var specA = ["!","@","#","$","%","^","&","*","(",")","-","+",".","/","<",">","~","|","?",":",";","{","}","[","]"];
@@ -58,3 +67,7 @@ var passW = passF.join("")
 var card = document.body.children[1].children[1]
 //var for <p> element 
 var text = card.querySelector("p")
+//changes placeholder text to password
+text.textContent = passW
+}
+

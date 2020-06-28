@@ -3,8 +3,8 @@ var button1 = document.body.querySelector("#generate");
 //Activates function on button press, which runs generator code
 button1.addEventListener("click", function(){
     password();
-});
     
+});
 
 //Password Generator
 function password(){
@@ -63,12 +63,11 @@ function password(){
   //Converts password from array to string
     var passW = passF.join("")
 
-  //Setting up DOM commands to display password
-  //variable for condensing location of card body div
-    var card = document.body.children[1].children[1]
+  //DOM commands to display password
   //var for <p> element 
-    var text = card.querySelector("p")
+    var text = document.body.children[1].querySelector("p")
   //changes placeholder text to password
     text.textContent = passW
 }
+
 

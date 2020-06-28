@@ -4,7 +4,7 @@
     padding-right: 0px;
     
 }
-.card-body{
+.card-text{
     border-style: dashed;
 }
 /*Reduces jumbotron size, removes bottom margin on phone screens*/

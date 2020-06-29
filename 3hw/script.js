@@ -1,10 +1,12 @@
 //Var for accesing generate button
 var button1 = document.body.querySelector("#generate");
-//Activates function on button press, which runs generator code
+
+//Generate Password Button
 button1.addEventListener("click", function(){
     password();
-    
 });
+
+//Copy Button
 
 //Password Generator
 function password(){
@@ -24,12 +26,12 @@ function password(){
   //If statement(s) to check for valid user inputs:
   //Makes sure at least one kind of character is selected, and password can be generated
     if(spec === false && num === false && low === false && upp === false){
-    alert("Please select at least one character type! Please refresh page.");
+    alert("Please select at least one character type!");
     };
   //Converts user input string to number, checks it 
     var lCheck = Number(length)
     if(lCheck < 8 || lCheck >  128){
-        alert("Please input a number (in numeric form) between 8 and 128! Please refresh page.");
+        alert("Please input a number (in numeric form) between 8 and 128!");
     };
 
   //Groups selected character arrays:
@@ -61,13 +63,19 @@ function password(){
     };
 
   //Converts password from array to string
-    var passW = passF.join("")
+    var passW = passF.join("");
 
   //DOM commands to display password
   //var for <p> element 
-    var text = document.body.children[1].querySelector("p")
+    var text = document.body.children[1].querySelector("p");
   //changes placeholder text to password
-    text.textContent = passW
+    text.textContent = passW;
 }
+
+
+function copy(){
+    
+}
+
 
 

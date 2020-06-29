@@ -27,8 +27,6 @@ function password(){
   //Converts user input string to number
   var lCheck = Number(length);
   var nCheck = isNaN(lCheck)
-  console.log(lCheck)
-  console.log(nCheck)
 
   //Arrays containing characters
   var specA = ["!","@","#","$","%","^","&","*","(",")","-","+",".","/","<",">","~","|","?",":",";","{","}","[","]"];

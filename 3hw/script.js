@@ -18,7 +18,7 @@ button2.addEventListener("click",function(){
 function password(){
 
   //Prompts to determine passwords parameters
-  var length = prompt("Please enter (not type) a number between 8 and 128");
+  var length = prompt("Please enter (not spell out) a number between 8 and 128");
   var spec = confirm("Would you like to include special characters?");
   var num = confirm("Would you like to include numbers?");
   var low = confirm("Would you like to include lowercase letters?");
@@ -26,6 +26,7 @@ function password(){
 
   //Converts user input string to number
   var lCheck = Number(length);
+  console.log (lCheck)
 
   //Arrays containing characters
   var specA = ["!","@","#","$","%","^","&","*","(",")","-","+",".","/","<",">","~","|","?",":",";","{","}","[","]"];
@@ -37,7 +38,7 @@ function password(){
   //Makes sure at least one kind of character is selected, and password can be generated
   if(spec === false && num === false && low === false && upp === false){
     alert("Please select at least one character type!");
-  } else if(lCheck < 8 || lCheck >  128){
+  } else if(lCheck < 8 || lCheck >  128 || lCheck === NaN){
     alert("Please input a number (in numeric form) between 8 and 128!");
   } else {
     //Groups selected character arrays:

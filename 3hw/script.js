@@ -24,6 +24,9 @@ function password(){
   var low = confirm("Would you like to include lowercase letters?");
   var upp = confirm("Would you like to include uppercase letters?");
 
+  //Converts user input string to number
+  var lCheck = Number(length);
+
   //Arrays containing characters
   var specA = ["!","@","#","$","%","^","&","*","(",")","-","+",".","/","<",">","~","|","?",":",";","{","}","[","]"];
   var numA = ["1","2","3","4","5","6","7","8","9"];
@@ -34,52 +37,48 @@ function password(){
   //Makes sure at least one kind of character is selected, and password can be generated
   if(spec === false && num === false && low === false && upp === false){
     alert("Please select at least one character type!");
-  };
-  //Converts user input string to number, checks it 
-  var lCheck = Number(length);
-  if(lCheck < 8 || lCheck >  128){
+  } else if(lCheck < 8 || lCheck >  128){
     alert("Please input a number (in numeric form) between 8 and 128!");
-  };
+  } else {
+    //Groups selected character arrays:
+    //Array to recieve character options
+    var passC = [];
+    //If statements to add arrays to passC
+    if(spec === true){
+      passC.push(specA);
+    };
+    if(num === true){
+      passC.push(numA);
+    };
+    if(low === true){
+      passC.push(lowA);
+    };
+    if(upp === true){
+      passC.push(uppA);
+    };
 
-  //Groups selected character arrays:
-  //Array to recieve character options
-  var passC = [];
-  //If statements to add arrays to passC
-  if(spec === true){
-    passC.push(specA);
-  };
-  if(num === true){
-    passC.push(numA);
-  };
-  if(low === true){
-    passC.push(lowA);
-  };
-  if(upp === true){
-    passC.push(uppA);
-  };
+    //Converts passC to single array
+    var passS = passC.toString();
+    var passA = passS.split(",");
 
-  //Converts passC to single array
-  var passS = passC.toString();
-  var passA = passS.split(",");
+    //Array to store password as it is generated
+    var passF = [];
 
-  //Array to store password as it is generated
-  var passF = [];
+    //For loop to create password
+    for(i=0; i<lCheck; i++){
+      passF.push(passA[Math.floor(Math.random()*passA.length)]);
+    };
 
-  //For loop to create password
-  for(i=0; i<lCheck; i++){
-    passF.push(passA[Math.floor(Math.random()*passA.length)]);
+    //Converts password from array to string
+    var passW = passF.join("");
+
+    //DOM commands to display password
+    //var for <p> element 
+    var text = document.body.children[1].querySelector("p");
+    //changes placeholder text to password
+    text.textContent = passW;
   };
-
-  //Converts password from array to string
-  var passW = passF.join("");
-
-  //DOM commands to display password
-  //var for <p> element 
-  var text = document.body.children[1].querySelector("p");
-  //changes placeholder text to password
-  text.textContent = passW;
 };
-
 //Copy Password Function
 function copy(){
   //Code below adapted (mostly borrowed) from w3schools tutorial
@@ -87,7 +86,7 @@ function copy(){
   var copyText = document.getElementById("pW");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy")
+  copyText.execCommand("copy")
   alert("Password copied.");
 };
 

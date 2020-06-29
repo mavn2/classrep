@@ -79,6 +79,7 @@ function password(){
     text.textContent = passW;
   };
 };
+
 //Copy Password Function
 function copy(){
   //Code below adapted (mostly borrowed) from w3schools tutorial

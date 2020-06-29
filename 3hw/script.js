@@ -77,6 +77,10 @@ function password(){
     var text = document.body.children[1].querySelector("p");
     //changes placeholder text to password
     text.textContent = passW;
+
+    //Writes password to input to be copied
+    var copyText = document.getElementById("pW");
+    copyText.textContent = passW;
   };
 };
 
@@ -85,6 +89,8 @@ function copy(){
   //Code below adapted (mostly borrowed) from w3schools tutorial
   //This does not work in local testing, but may work once hosted
   var copyText = document.getElementById("pW");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
   copyText.execCommand("copy")
   alert("Password copied.");
 };

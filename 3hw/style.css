@@ -3,6 +3,11 @@ body{
     background-color: whitesmoke;
 }
 
+/*Hides input box*/
+#pW{
+    visibility: hidden;
+}
+
 /*Styling for generator box*/
 .full-width{
     padding-left: 0px;

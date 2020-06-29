@@ -88,10 +88,12 @@ function password(){
 function copy(){
   //Code below adapted (mostly borrowed) from w3schools tutorial
   //This does not work in local testing, but may work once hosted
+  //This does not work, and I am not sure why. Resources I've seen
+  //get into APIs way over my head.
   var copyText = document.getElementById("pW");
   copyText.select();
   copyText.setSelectionRange(0, 99999);
-  copyText.execCommand("copy")
+  document.execCommand("copy")
   alert("Password copied.");
 };
 

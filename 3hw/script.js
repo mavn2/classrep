@@ -35,14 +35,12 @@ function password(){
   var uppA = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
   //If statement(s) to check for valid user inputs:
-  //Makes sure at least one kind of character is selected, and password can be generated
   if(spec === false && num === false && low === false && upp === false){
     alert("Please select at least one character type!");
   } else if(nCheck === true || lCheck < 8 || lCheck >  128){
     alert("Please input a number (in numeric form) between 8 and 128!");
   } else {
-    //Groups selected character arrays:
-    //Array to recieve character options
+    //Array to recieve selected character arrays
     var passC = [];
     //If statements to add arrays to passC
     if(spec === true){
@@ -58,7 +56,7 @@ function password(){
       passC.push(uppA);
     };
 
-    //Converts passC to single array
+    //Merges arrays in passC
     var passS = passC.toString();
     var passA = passS.split(",");
 
@@ -74,7 +72,6 @@ function password(){
     var passW = passF.join("");
 
     //DOM commands to display password
-    //Writes password to input to be copied
     document.getElementById("pW").value = passW;
   };
 };
@@ -82,7 +79,6 @@ function password(){
 //Copy Password Function
 function copy(){
   //Code below adapted (borrowed aside from Id/alert) from w3schools tutorial
-  //Code now executes without errors and appears functional, but does not actually save input to clipboard.
   var copyText = document.getElementById("pW");
   copyText.select();
   copyText.setSelectionRange(0, 99999);

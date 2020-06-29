@@ -73,20 +73,15 @@ function password(){
     var passW = passF.join("");
 
     //DOM commands to display password
-    //var for <p> element 
-    var text = document.body.children[1].querySelector("p");
-    //changes placeholder text to password
-    text.textContent = passW;
-
     //Writes password to input to be copied
-    var copyText = document.getElementById("pW");
-    copyText.textContent = passW;
+    document.getElementById("pW").value = passW;
   };
 };
 
 //Copy Password Function
 function copy(){
   //Code below adapted (borrowed aside from Id/alert) from w3schools tutorial
+  //Code now executes without errors and appears functional, but does not actually save input to clipboard.
   var copyText = document.getElementById("pW");
   copyText.select();
   copyText.setSelectionRange(0, 99999);

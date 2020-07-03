@@ -9,6 +9,12 @@ body{
     padding-right: 0px;
     
 }
+
+input {
+    outline: none;
+    border: none;
+}
+
 .card-body{
     border-style: dashed;
     margin-top: 10px;

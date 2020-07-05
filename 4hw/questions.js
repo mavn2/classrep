@@ -12,7 +12,6 @@ var questions = [
 ]
 
 setQuestions();
-console.log('test')
 function setQuestions(){
     localStorage.setItem("questions",JSON.stringify(questions));
 };

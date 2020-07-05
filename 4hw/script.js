@@ -7,6 +7,7 @@ var header = document.getElementById('top');
 var center = document.getElementById('center');
 var footer = document.getElementById('bottom');
 var hanger = document.getElementById('hanger')
+
 //Var to Store Question Number
 var qNum=0
 
@@ -24,15 +25,18 @@ center.style.display = "none"
 renderChoices();
 };
 
-//Function to Display answers as buttons-
+//Function to display answer choices as buttons-
 function renderChoices(){
     for(i=0; i<questions[qNum].choices.length;i++){
+        //creates element to contain button
         var ansL = document.createElement("li")
+        //creates button
         var ansB = document.createElement("button");
         ansB.setAttribute("class","btn btn-primary");
         ansB.setAttribute("data-index-number", i);
         ansB.setAttribute("id", "answer");
         ansB.innerHTML = questions[qNum].choices[i];
+        //places button in li, li in list
         ansL.appendChild(ansB);
         hanger.appendChild(ansL);
     }

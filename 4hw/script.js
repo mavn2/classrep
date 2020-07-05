@@ -27,12 +27,14 @@ renderChoices();
 //Function to Display answers as buttons-
 function renderChoices(){
     for(i=0; i<questions[qNum].choices.length;i++){
-        var option = document.createElement("button");
-        option.setAttribute("class","btn btn-primary");
-        //option.setAttribute("data index number", i);
-        option.setAttribute("id", "answer");
-        option.innerHTML = questions[qNum].choices[i];
-        hanger.appendChild(option);
+        var ansL = document.createElement("li")
+        var ansB = document.createElement("button");
+        ansB.setAttribute("class","btn btn-primary");
+        ansB.setAttribute("data-index-number", i);
+        ansB.setAttribute("id", "answer");
+        ansB.innerHTML = questions[qNum].choices[i];
+        ansL.appendChild(ansB);
+        hanger.appendChild(ansL);
     }
 
 }

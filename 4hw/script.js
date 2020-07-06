@@ -85,7 +85,13 @@ function next(){
         };
         renderQuestion();
     } else {
-        console.log("stop!!")
+        console.log("stop!!");
+        while (hanger.hasChildNodes()) {  
+            hanger.removeChild(hanger.firstChild);
+        };
+        header.textContent = "Coding Quiz!"
+        center.textContent = "You scored " + score + " points!"
+        center.style.display = "inline"
     }
 };
 

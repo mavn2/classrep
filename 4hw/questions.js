@@ -5,7 +5,7 @@ var questions = [
      answer: 'black'
   },
   {
-     title: 'is this one test?',
+     title: 'is this one a test?',
      choices: ['yes', 'no', 'maybe so'],
      answer: 'yes',
   },
@@ -16,7 +16,7 @@ var questions = [
   },
   {
      title: 'which one of these has what I keep missing?',
-     choices: ['obj.tostring;','obj.toString','obj.totoString()',],
+     choices: ['obj.tostring;','obj.toString','obj.toString()',],
      answer: 'obj.toSting()'
   },
   {

@@ -86,4 +86,3 @@ function next(){
 };
 
 //Timer 
-//score variables

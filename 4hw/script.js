@@ -8,13 +8,17 @@ var center = document.getElementById('center');
 var footer = document.getElementById('bottom');
 var hanger = document.getElementById('hanger')
 
-//Var to Store Question Number
+//Var to store question number
 var qNum=0
+
+//Var to track score
+var score = 0
 
 //Code for button to start quiz
 var startB = document.getElementById('start');
 startB.addEventListener("click",function(){
-    qNum=0
+    qNum = 0
+    score = 0
     renderQuestion();
 });
 
@@ -38,7 +42,7 @@ function renderChoices(){
         //makes i retrievable
         ansB.setAttribute("data-index-number", i);
         console.log(ansB.getAttribute('data-index-number'))
-        //setting id for reference
+        //setting an id for reference
         ansB.setAttribute("id", "answer");
         ansB.innerHTML = questions[qNum].choices[i];
 
@@ -53,12 +57,16 @@ function renderChoices(){
             submit();
             function submit(){
                 var iNum = pick.getAttribute('data-index-number')
-                var sub = questions[qNum].choices[iNum]
-                console.log(sub)
-                var check = questions[qNum].answer
-                console.log(check)
+                var sub = questions[qNum].choices[iNum];
+                console.log(sub);
+                var check = questions[qNum].answer;
+                console.log(check);
                 if(sub === check){
                     console.log('easy!')
+                    score++;
+                    console.log(score);
+                } else {
+                    console.log('no!');
                 }
             };
         });
@@ -72,3 +80,4 @@ function renderChoices(){
 
 //Function to advance to next question
 //Timer 
+//score variables

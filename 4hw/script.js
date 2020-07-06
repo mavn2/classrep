@@ -95,17 +95,20 @@ function next(){
         };
         renderQuestion();
     } else {
-        console.log("stop!!");
-        while (hanger.hasChildNodes()){  
-            hanger.removeChild(hanger.firstChild);
-        };
-        header.textContent = "Coding Quiz!";
-        center.textContent = "You scored " + score + " points!";
-        center.style.display = "inline";
-
-        //checks score against highscores
+        quizOver();
         checkScores();
     };
+};
+
+//Function to display ending card
+function quizOver(){
+    console.log("stop!!");
+    while (hanger.hasChildNodes()){  
+        hanger.removeChild(hanger.firstChild);
+    };
+    header.textContent = "Coding Quiz!";
+    center.textContent = "You scored " + score + " points!";
+    center.style.display = "inline";
 };
 
 //Function to check score against highscores

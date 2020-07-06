@@ -117,8 +117,8 @@ function checkScores(){
         console.log(score2)
     } else if (score > score3 || !score3){
         localStorage.setItem("score3", score);
-    } else {
-    console.log(placeholder);
+    } else if(score < score3){
+    console.log('placeholder');
     };
 };
 

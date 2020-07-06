@@ -14,6 +14,9 @@ var qNum=0
 //Var to track score
 var score = 0
 
+//Var to track timer
+var timeRemaining = 10
+
 //Vars for highscores in local storage
 var score1 = localStorage.getItem("score1")
 var score2 = localStorage.getItem("score2")
@@ -128,7 +131,17 @@ function checkScores(){
 
 //Timer 
 function timer(){
-    setInterval(function(){
-    next();
-    }, 15000);
+    timeRemaining = 10
+    var countdown = setInterval(function(){
+    timeRemaining--;
+    console.log(timeRemaining)
+    
+    
+
+    if(timeRemaining === 0){
+        clearInterval(countdown);
+        next();
+    } 
+
+    }, 1000)    
 };

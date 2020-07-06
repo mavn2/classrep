@@ -27,7 +27,7 @@ startB.addEventListener("click",function(){
 //Function to display quiz in center card
 function renderQuestion(){
     header.textContent = questions[qNum].title;
-center.style.display = "none"
+    center.style.display = "none"
     renderChoices();
 };
 
@@ -79,8 +79,10 @@ function renderChoices(){
 function next(){
     qNum++;
     console.log(qNum);
-    document.body.getElementsByClassName("li").style.display = "none";
-    renderChoices();
+    while (hanger.hasChildNodes()) {  
+        hanger.removeChild(hanger.firstChild);
+      }
+    renderQuestion();
 };
 
 //Timer 

@@ -15,7 +15,7 @@ var qNum=0
 var score = 0
 
 //Var to track timer
-var timeRemaining = 10
+var timeRemaining = 75
 
 //Vars for highscores in local storage
 var score1 = localStorage.getItem("score1")
@@ -27,7 +27,9 @@ var startB = document.getElementById('start');
 startB.addEventListener("click",function(){
     qNum = 0
     score = 0
+    timeRemaining= 75
     renderQuestion();
+    timer();
 });
 
 
@@ -81,7 +83,6 @@ function renderChoices(){
             };
         }); 
     };
-    timer();
 };
 
 //Function to advance to next question
@@ -134,7 +135,6 @@ function checkScores(){
 
 //Timer 
 function timer(){
-    timeRemaining = 10
     var countdown = setInterval(function(){
     timeRemaining--;
     console.log(timeRemaining)
@@ -143,7 +143,7 @@ function timer(){
 
     if(timeRemaining === 0){
         clearInterval(countdown);
-        next();
+        quizOver();
     } 
 
     }, 1000)    

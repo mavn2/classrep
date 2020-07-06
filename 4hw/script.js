@@ -18,11 +18,13 @@ startB.addEventListener("click",function(){
     renderQuestion();
 });
 
+
+
 //Function to display quiz in center card
 function renderQuestion(){
-header.textContent = questions[qNum].title;
+    header.textContent = questions[qNum].title;
 center.style.display = "none"
-renderChoices();
+    renderChoices();
 };
 
 //Function to display answer choices as buttons-
@@ -33,12 +35,32 @@ function renderChoices(){
         //creates button
         var ansB = document.createElement("button");
         ansB.setAttribute("class","btn btn-primary");
+        //makes i retrievable
         ansB.setAttribute("data-index-number", i);
+        console.log(ansB.getAttribute('data-index-number'))
+        //setting id for reference
         ansB.setAttribute("id", "answer");
         ansB.innerHTML = questions[qNum].choices[i];
+
         //places button in li, li in list
         ansL.appendChild(ansB);
         hanger.appendChild(ansL);
-    }
 
-}
+        //Creates event for button
+        ansB.addEventListener("click",function(){
+            //Function to submit/check answer
+            submit();
+            function submit(){
+                console.log(ansB.getAttribute('data-index-number'))
+            };
+        });
+        
+        
+    };
+};
+
+
+
+
+//Function to advance to next question
+//Timer 

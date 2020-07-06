@@ -98,7 +98,7 @@ function next(){
         center.textContent = "You scored " + score + " points!";
         center.style.display = "inline";
 
-        checkScores;
+        checkScores();
     };
 };
 
@@ -108,6 +108,8 @@ function checkScores(){
         localStorage.setItem("score1", score);
     } else if (score > score2 || !score2){
         localStorage.setItem("score2", score);
+        console.log(score + "test")
+        console.log(score2)
     } else if (score > score3 || !score3){
         localStorage.setItem("score3", score);
     } else {

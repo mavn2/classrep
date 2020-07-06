@@ -52,7 +52,14 @@ function renderChoices(){
             var pick = this
             submit();
             function submit(){
-                console.log(pick.getAttribute('data-index-number'))
+                var iNum = pick.getAttribute('data-index-number')
+                var sub = questions[qNum].choices[iNum]
+                console.log(sub)
+                var check = questions[qNum].answer
+                console.log(check)
+                if(sub === check){
+                    console.log('easy!')
+                }
             };
         });
         

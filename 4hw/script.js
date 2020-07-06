@@ -130,5 +130,5 @@ function checkScores(){
 function timer(){
     setInterval(function(){
     next();
-    }, 10000);
+    }, 15000);
 };

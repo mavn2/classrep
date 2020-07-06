@@ -83,6 +83,7 @@ function renderChoices(){
 //Function to advance to next question
 function next(){
     qNum++;
+    //Renders next question if any remain, results if not
     if(qNum < questions.length){
         console.log(qNum);
         while (hanger.hasChildNodes()){  
@@ -98,6 +99,7 @@ function next(){
         center.textContent = "You scored " + score + " points!";
         center.style.display = "inline";
 
+        //checks score against highscores
         checkScores();
     };
 };
@@ -109,6 +111,7 @@ function checkScores(){
     var score2 = localStorage.getItem("score2")
     var score3 = localStorage.getItem("score3")
 
+    //Checks score against highscores
     if(score > score1 || !score1){
         localStorage.setItem("score1", score);
     } else if (score > score2 || !score2){
@@ -123,3 +126,8 @@ function checkScores(){
 };
 
 //Timer 
+function timer(){
+    setInterval(function(){
+    next();
+    }, 10000);
+};

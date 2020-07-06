@@ -78,11 +78,15 @@ function renderChoices(){
 //Function to advance to next question
 function next(){
     qNum++;
-    console.log(qNum);
-    while (hanger.hasChildNodes()) {  
-        hanger.removeChild(hanger.firstChild);
-      }
-    renderQuestion();
+    if(qNum < questions.length){
+        console.log(qNum);
+        while (hanger.hasChildNodes()) {  
+            hanger.removeChild(hanger.firstChild);
+        };
+        renderQuestion();
+    } else {
+        console.log("stop!!")
+    }
 };
 
 //Timer 

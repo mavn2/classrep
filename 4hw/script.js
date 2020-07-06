@@ -49,9 +49,10 @@ function renderChoices(){
         //Creates event for button
         ansB.addEventListener("click",function(){
             //Function to submit/check answer
+            var pick = this
             submit();
             function submit(){
-                console.log(ansB.getAttribute('data-index-number'))
+                console.log(pick.getAttribute('data-index-number'))
             };
         });
         

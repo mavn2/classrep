@@ -16,6 +16,7 @@ var score = 0
 
 //Var to track timer
 var timeRemaining = 75
+var complete = false
 
 //Vars for highscores in local storage
 var score1 = localStorage.getItem("score1")
@@ -27,7 +28,8 @@ var startB = document.getElementById('start');
 startB.addEventListener("click",function(){
     qNum = 0
     score = 0
-    timeRemaining= 75
+    timeRemaining = 75
+    complete = false
     renderQuestion();
     timer();
 });
@@ -78,7 +80,7 @@ function renderChoices(){
                     next();
                 } else {
                     console.log('no!');
-                    timeRemaining = timeRemaining - 10;
+                    timeRemaining = timeRemaining - 15;
                     console.log(timeRemaining)
                     next();
                 };
@@ -98,6 +100,7 @@ function next(){
         };
         renderQuestion();
     } else {
+        complete = true
         quizOver();
         checkScores();
     };
@@ -147,6 +150,13 @@ function timer(){
         clearInterval(countdown);
         quizOver();
     } 
+
+    if(complete === true){
+        clearInterval(countdown);
+        timeRemaining = timeRemaining + 1
+    }
+
+
 
     }, 1000)    
 };

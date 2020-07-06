@@ -78,6 +78,8 @@ function renderChoices(){
                     next();
                 } else {
                     console.log('no!');
+                    timeRemaining = timeRemaining - 10;
+                    console.log(timeRemaining)
                     next();
                 };
             };

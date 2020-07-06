@@ -100,7 +100,7 @@ function next(){
         if(score > score1 || !score1){
             localStorage.setitem("score1", score)
         }
-    }
+    };
 };
 
 //Timer 

@@ -12,17 +12,18 @@ var questions = [
   {
      title: 'which on of these is right?',
      choices: ['Math.random', 'math.Random','Math.Random()','Math.random()'],
-     answer: 'Math.random()'
+     answer: 'Math.random()',
   },
   {
      title: 'which one of these has what I keep missing?',
      choices: ['obj.tostring;','obj.toString','obj.toString()',],
-     answer: 'obj.toSting()'
+     answer: 'obj.toString()',
   },
   {
      title: "let's just make sure",
-     choices: ['obj.custom()','obj.Custom','obj.custom',]
-  }
+     choices: ['obj.custom()','obj.Custom','obj.custom',],
+     answer: 'obj.custom()',
+  },
 ]
 
 setQuestions();

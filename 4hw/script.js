@@ -14,6 +14,11 @@ var qNum=0
 //Var to track score
 var score = 0
 
+//Vars for highscores in local storage
+var score1 = localStorage.getItem("score1")
+var score2 = localStorage.getItem("score2")
+var score3 = localStorage.getItem("score3")
+
 //Code for button to start quiz
 var startB = document.getElementById('start');
 startB.addEventListener("click",function(){
@@ -69,7 +74,7 @@ function renderChoices(){
                 } else {
                     console.log('no!');
                     next();
-                }
+                };
             };
         }); 
     };
@@ -80,18 +85,21 @@ function next(){
     qNum++;
     if(qNum < questions.length){
         console.log(qNum);
-        while (hanger.hasChildNodes()) {  
+        while (hanger.hasChildNodes()){  
             hanger.removeChild(hanger.firstChild);
         };
         renderQuestion();
     } else {
         console.log("stop!!");
-        while (hanger.hasChildNodes()) {  
+        while (hanger.hasChildNodes()){  
             hanger.removeChild(hanger.firstChild);
         };
-        header.textContent = "Coding Quiz!"
-        center.textContent = "You scored " + score + " points!"
-        center.style.display = "inline"
+        header.textContent = "Coding Quiz!";
+        center.textContent = "You scored " + score + " points!";
+        center.style.display = "inline";
+        if(score > score1 || !score1){
+            localStorage.setitem("score1", score)
+        }
     }
 };
 

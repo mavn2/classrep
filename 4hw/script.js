@@ -97,9 +97,21 @@ function next(){
         header.textContent = "Coding Quiz!";
         center.textContent = "You scored " + score + " points!";
         center.style.display = "inline";
-        if(score > score1 || !score1){
-            localStorage.setitem("score1", score)
-        }
+
+        checkScores;
+    };
+};
+
+//Function to check score against highscores
+function checkScores(){
+    if(score > score1 || !score1){
+        localStorage.setItem("score1", score);
+    } else if (score > score2 || !score2){
+        localStorage.setItem("score2", score);
+    } else if (score > score3 || !score3){
+        localStorage.setItem("score3", score);
+    } else {
+    console.log(placeholder);
     };
 };
 

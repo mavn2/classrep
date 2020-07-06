@@ -78,6 +78,7 @@ function renderChoices(){
             };
         }); 
     };
+    timer();
 };
 
 //Function to advance to next question

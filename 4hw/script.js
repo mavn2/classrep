@@ -65,19 +65,23 @@ function renderChoices(){
                     console.log('easy!')
                     score++;
                     console.log(score);
+                    next();
                 } else {
                     console.log('no!');
+                    next();
                 }
             };
-        });
-        
-        
+        }); 
     };
 };
 
-
-
-
 //Function to advance to next question
+function next(){
+    qNum++;
+    console.log(qNum);
+    document.body.getElementsByClassName("li").style.display = "none";
+    renderChoices();
+};
+
 //Timer 
 //score variables

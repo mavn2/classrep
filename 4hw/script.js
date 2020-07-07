@@ -15,7 +15,10 @@ var qNum=0
 
 //Vars to track score
 var score = 0
-var userScores =[]
+var userScores = []
+var userScore = {}
+var uName;
+var uScore;
 
 //Vars to track timer
 var timeRemaining = 75
@@ -140,14 +143,14 @@ function recScore(){
 //Function to save score to local storage
 function savScore(){
      //Creates object to store scores, logs values
-    var userScore = {};
-    
-    userScore.uName = document.getElementById("name").value;
-    userScore.score = score;
+    uName = document.getElementById("name").value;
+    uScore = score;
+    userScore = {name: uName, score: uScore}
     userScores.push(userScore);
     console.log(userScore);
-        
+    console.log(userScores);     
 }
+
 //Function to highscores
 function checkScores(){
     //Calculates Score

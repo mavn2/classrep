@@ -92,19 +92,13 @@ function renderChoices(){
             function submit(){
                 var iNum = pick.getAttribute('data-index-number')
                 var sub = questions[qNum].choices[iNum];
-                console.log(sub);
                 var check = questions[qNum].answer;
-                console.log(check);
                 if(sub === check){
-                    console.log('easy!')
                     score++;
-                    console.log(score);
                     next();
                 } else {
-                    console.log('no!');
                     timeRemaining = timeRemaining - 15;
                     setCountDown();
-                    console.log(timeRemaining)
                     next();
                 };
             };
@@ -117,7 +111,6 @@ function next(){
     qNum++;
     //Renders next question if any remain, results if not
     if(qNum < questions.length){
-        console.log(qNum);
         while (hanger.hasChildNodes()){  
             hanger.removeChild(hanger.firstChild);
         };
@@ -132,7 +125,6 @@ function next(){
 //Displays ending card
 function quizOver(){
     recScore();
-    console.log("stop!!");
     while (hanger.hasChildNodes()){  
         hanger.removeChild(hanger.firstChild);
     };

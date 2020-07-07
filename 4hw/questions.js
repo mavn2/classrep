@@ -5,9 +5,9 @@ var questions = [
      answer: 'black'
   },
   {
-     title: 'is this one a test?',
-     choices: ['yes', 'no', 'maybe so'],
-     answer: 'yes',
+     title: 'The syntax for an object is:',
+     choices: ['key: value', 'name : value', 'value:key'],
+     answer: 'key: value',
   },
   {
      title: 'which on of these is right?',

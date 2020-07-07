@@ -186,7 +186,7 @@ function timer(){
     
     
 
-    if(timeRemaining === 0){
+    if(timeRemaining === 0 || timeRemaining < 0){
         clearInterval(countdown);
         quizOver();
     } 

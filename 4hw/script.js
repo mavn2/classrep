@@ -62,7 +62,7 @@ function renderQuestion(){
     renderChoices();
 };
 
-//Function to display answer choices as buttons-
+//Displays answer choicesm, defines their behavior
 function renderChoices(){
     for(i=0; i<questions[qNum].choices.length;i++){
         //creates element to contain button
@@ -109,7 +109,7 @@ function renderChoices(){
     };
 };
 
-//Function to advance to next question
+//Advances to next question or ending
 function next(){
     qNum++;
     //Renders next question if any remain, results if not
@@ -126,7 +126,7 @@ function next(){
     };
 };
 
-//Function to display ending card
+//Displays ending card
 function quizOver(){
     recScore();
     console.log("stop!!");
@@ -163,7 +163,8 @@ function savScore(){
 
 //Displays top five scores
 function viewScores(){
-
+    userScores.sort(function(a, b){return b.score-a.score})
+    console.log(userScores)
 };
 
 //Timer 

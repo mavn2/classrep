@@ -137,7 +137,9 @@ function recScore(){
 
     //Shows inpot,
     nameField.style.display = "initial";
-    submit.addEventListener("click", savScore())
+    submit.addEventListener("click", function(){
+        savScore();
+    });
 };
 
 //Function to save score to local storage

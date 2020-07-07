@@ -8,6 +8,8 @@ var center = document.getElementById('center');
 var footer = document.getElementById('bottom');
 var hanger = document.getElementById('hanger')
 var nameField = document.getElementById("nameField")
+var submit = document.getElementById("save")
+
 //Var to store question number
 var qNum=0
 
@@ -20,7 +22,6 @@ var timeRemaining = 75
 var complete = false
 
 //
-var scoreArray = []
 var score1 = localStorage.getItem("score1")
 var score2 = localStorage.getItem("score2")
 var score3 = localStorage.getItem("score3")
@@ -131,19 +132,21 @@ function recScore(){
     }
     score = score + timeRemaining;
 
-    //Shows name input
+    //Shows inpot,
     nameField.style.display = "initial";
+    submit.addEventListener("click", savScore())
+};
 
-    //Creates object to store scores, logs values
+//Function to save score to local storage
+function savScore(){
+     //Creates object to store scores, logs values
     var userScore = {};
     
-    var submit = document.getElementById("save")
-    submit.addEventListener("click", function(){
-        userScore.uName = document.getElementById("name").value;
-        userScore.score = score;
-        userScores.push(userScore);
-        console.log(userScore);
-    })  
+    userScore.uName = document.getElementById("name").value;
+    userScore.score = score;
+    userScores.push(userScore);
+    console.log(userScore);
+        
 }
 //Function to highscores
 function checkScores(){

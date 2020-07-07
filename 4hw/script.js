@@ -13,10 +13,7 @@ var qNum=0
 
 //Vars to track score
 var score = 0
-var userScore = {
-    score: score,
-    uName: "",
-}
+var userScores =[]
 
 //Vars to track timer
 var timeRemaining = 75
@@ -135,8 +132,22 @@ function recScore(){
 
     //Shows name input
     document.getElementById("nameField").style.display = "initial";
+
+    //Creates object to store scores, logs values
+    var userScore = {
+        score: score,
+        uName: "",
+    };
+    
+    var submit = document.getElementById("save")
+    submit.addEventListener("click", function(){
+        userScore.uName = document.getElementById("name").submit
+        userScore.score = score
+        userScores.push(userScore)
+    })
+    
 }
-//Function to check highscores
+//Function to highscores
 function checkScores(){
     //Calculates Score
     if(timeRemaining <  0){

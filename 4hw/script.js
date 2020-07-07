@@ -1,11 +1,11 @@
 //Allows questions to be quickly accessed from local storage
 var questions = JSON.parse(localStorage.getItem("questions"));
-console.log(questions);//keeping this for testing just in case but don't forget
 
-//Vars to access the center card through dom
+//Vars to access the center card through DOM
 var header = document.getElementById('top');
 var center = document.getElementById('center');
 var footer = document.getElementById('bottom');
+var startB = document.getElementById('start');
 var hanger = document.getElementById('hanger')
 var nameField = document.getElementById("nameField")
 var submit = document.getElementById("save")
@@ -14,27 +14,23 @@ var timer = document.getElementById("countdown")
 //Var to store question number
 var qNum=0
 
-//Vars to track score
+//Vars to track/log score
 var score = 0
 var userScores = []
 var userScore = {}
 var uName;
 var uScore;
 
-//Vars to track timer
+//Vars to control timer
 var timeRemaining = 0
 var complete = false
 
-//
-var score1 = localStorage.getItem("score1")
-var score2 = localStorage.getItem("score2")
-var score3 = localStorage.getItem("score3")
-
-//Function to display time remaining
-
+//Function to display time remaining on page
+function setCountDown(){
+    countdown.textContent = "Time = " + timeRemaining
+};
 
 //Code for button to start quiz
-var startB = document.getElementById('start');
 startB.addEventListener("click",function(){
     qNum = 0
     score = 0

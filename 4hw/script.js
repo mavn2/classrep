@@ -9,6 +9,7 @@ var footer = document.getElementById('bottom');
 var hanger = document.getElementById('hanger')
 var nameField = document.getElementById("nameField")
 var submit = document.getElementById("save")
+var timer = document.getElementById("countdown")
 
 //Var to store question number
 var qNum=0
@@ -21,13 +22,16 @@ var uName;
 var uScore;
 
 //Vars to track timer
-var timeRemaining = 75
+var timeRemaining = 0
 var complete = false
 
 //
 var score1 = localStorage.getItem("score1")
 var score2 = localStorage.getItem("score2")
 var score3 = localStorage.getItem("score3")
+
+//Function to display time remaining
+
 
 //Code for button to start quiz
 var startB = document.getElementById('start');

@@ -102,14 +102,13 @@ function next(){
         renderQuestion();
     } else {
         complete = true
-        quizOver();
         checkScores();
+        quizOver();
     };
 };
 
 //Function to display ending card
 function quizOver(){
-    
     console.log("stop!!");
     while (hanger.hasChildNodes()){  
         hanger.removeChild(hanger.firstChild);
@@ -122,6 +121,12 @@ function quizOver(){
 
 //Function to check score against highscores
 function checkScores(){
+    //Calculates Score
+    if(timeRemaining <  0){
+        timeRemaining = 0
+    }
+    score = score + timeRemaining
+    
     //Vars for highscores in local storage
     var score1 = localStorage.getItem("score1")
     var score2 = localStorage.getItem("score2")

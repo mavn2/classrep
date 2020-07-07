@@ -9,7 +9,7 @@ var startB = document.getElementById('start');
 var hanger = document.getElementById('hanger')
 var nameField = document.getElementById("nameField")
 var submit = document.getElementById("save")
-var timer = document.getElementById("countdown")
+var countDown = document.getElementById("countdown")
 
 //Var to store question number
 var qNum=0
@@ -27,7 +27,7 @@ var complete = false
 
 //Function to display time remaining on page
 function setCountDown(){
-    countdown.textContent = "Time = " + timeRemaining
+    countDown.textContent = "Time = " + timeRemaining
 };
 
 setCountDown();
@@ -92,6 +92,7 @@ function renderChoices(){
                 } else {
                     console.log('no!');
                     timeRemaining = timeRemaining - 15;
+                    setCountDown();
                     console.log(timeRemaining)
                     next();
                 };

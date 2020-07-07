@@ -26,11 +26,10 @@ var timeRemaining = 0;
 var complete = false;
 
 //Function to display time remaining on page
+setCountDown();
 function setCountDown(){
     countDown.textContent = "Time = " + timeRemaining;
 };
-
-setCountDown();
 
 //Code for button to start quiz
 startB.addEventListener("click",function(){
@@ -45,6 +44,10 @@ startB.addEventListener("click",function(){
     nameField.style.display = "none";
 });
 
+//Code for button to submit stores
+submit.addEventListener("click", function(){
+    savScore();
+});
 
 
 //Function to display quiz in center card
@@ -141,9 +144,6 @@ function recScore(){
 
     //Shows input field and preps save button
     nameField.style.display = "initial";
-    submit.addEventListener("click", function(){
-        savScore();
-    });
 };
 
 //Saves score to local storage

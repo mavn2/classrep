@@ -76,9 +76,8 @@ function renderChoices(){
         ansB.setAttribute("class","btn btn-primary");
         //makes i retrievable
         ansB.setAttribute("data-index-number", i);
-        console.log(ansB.getAttribute('data-index-number'))
         //setting an id for reference
-        ansB.setAttribute("id", "answer");
+        ansL.setAttribute("class", "answer");
         ansB.innerHTML = questions[qNum].choices[i];
 
         //places button in li, li in list

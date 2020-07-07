@@ -40,8 +40,11 @@ var scores = [
     },
 ];
 
-//Saves scores to local storage
-setHighScores();
+//Saves scores to local storage if required
+var check = localStorage.getItem("scores")
+if(!check){
+    setHighScores();
+}
 function setHighScores(){
     localStorage.setItem("scores",JSON.stringify(scores))
 }

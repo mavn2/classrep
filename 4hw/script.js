@@ -134,16 +134,14 @@ function recScore(){
     document.getElementById("nameField").style.display = "initial";
 
     //Creates object to store scores, logs values
-    var userScore = {
-        score: score,
-        uName: "",
-    };
+    var userScore = {};
     
     var submit = document.getElementById("save")
     submit.addEventListener("click", function(){
-        userScore.uName = document.getElementById("name").submit
-        userScore.score = score
-        userScores.push(userScore)
+        userScore.uName = document.getElementById("name").value;
+        userScore.score = score;
+        userScores.push(userScore);
+        console.log(userScore);
     })
     
 }

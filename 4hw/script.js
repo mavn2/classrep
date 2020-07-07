@@ -38,6 +38,7 @@ startB.addEventListener("click",function(){
     score = 0
     timeRemaining = 75
     complete = false
+    setCountDown();
     renderQuestion();
     timer();
     startB.style.visibility = "hidden"
@@ -186,7 +187,7 @@ function checkScores(){
 function timer(){
     var countdown = setInterval(function(){
     timeRemaining--;
-    console.log(timeRemaining)
+    setCountDown();
     
     
 
@@ -197,7 +198,8 @@ function timer(){
 
     if(complete === true){
         clearInterval(countdown);
-        timeRemaining = timeRemaining + 1
+        timeRemaining = timeRemaining + 1;
+        setCountDown();
     }
 
 

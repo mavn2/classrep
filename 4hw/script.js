@@ -11,10 +11,14 @@ var hanger = document.getElementById('hanger')
 //Var to store question number
 var qNum=0
 
-//Var to track score
+//Vars to track score
 var score = 0
+var userScore = {
+    score: score,
+    uName: "",
+}
 
-//Var to track timer
+//Vars to track timer
 var timeRemaining = 75
 var complete = false
 
@@ -131,9 +135,8 @@ function recScore(){
 
     //Shows name input
     document.getElementById("nameField").style.display = "initial";
-    
 }
-//Function to highscores
+//Function to check highscores
 function checkScores(){
     //Calculates Score
     if(timeRemaining <  0){

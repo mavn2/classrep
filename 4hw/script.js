@@ -26,13 +26,13 @@ var uScore;
 var timeRemaining = 0;
 var complete = false;
 
-//Function to display time remaining on page
+//Displays time remaining on page
 setCountDown();
 function setCountDown(){
     countDown.textContent = "Time = " + timeRemaining;
 };
 
-//Code for button to start quiz
+//Button to start quiz
 startB.addEventListener("click",function(){
     qNum = 0;
     score = 0;
@@ -45,11 +45,15 @@ startB.addEventListener("click",function(){
     nameField.style.display = "none";
 });
 
-//Code for button to submit stores
+//Button to submit stores
 submit.addEventListener("click", function(){
     savScore();
 });
 
+//Button to view high scores
+viewer.addEventListener("click",function(){
+    viewScores();
+})
 
 //Function to display quiz in center card
 function renderQuestion(){
@@ -157,31 +161,9 @@ function savScore(){
     localStorage.setItem("scores",JSON.stringify(userScores))
 }
 
-//Function to highscores
-function checkScores(){
-    //Calculates Score
-    if(timeRemaining <  0){
-        timeRemaining = 0
-    }
-    score = score + timeRemaining
-    
-    //Vars for highscores in local storage
-    var score1 = localStorage.getItem("score1")
-    var score2 = localStorage.getItem("score2")
-    var score3 = localStorage.getItem("score3")
+//Displays top five scores
+function viewScores(){
 
-    //Checks score against highscores
-    if(score > score1 || !score1){
-        localStorage.setItem("score1", score);
-    } else if (score > score2 || !score2){
-        localStorage.setItem("score2", score);
-        console.log(score + "test")
-        console.log(score2)
-    } else if (score > score3 || !score3){
-        localStorage.setItem("score3", score);
-    } else if(score < score3){
-    console.log('placeholder');
-    };
 };
 
 //Timer 

@@ -7,7 +7,7 @@ var header = document.getElementById('top');
 var center = document.getElementById('center');
 var footer = document.getElementById('bottom');
 var hanger = document.getElementById('hanger')
-
+var nameField = document.getElementById("nameField")
 //Var to store question number
 var qNum=0
 
@@ -35,6 +35,7 @@ startB.addEventListener("click",function(){
     renderQuestion();
     timer();
     startB.style.visibility = "hidden"
+    nameField.style.display = "none"
 });
 
 
@@ -104,13 +105,14 @@ function next(){
         renderQuestion();
     } else {
         complete = true
-        checkScores();
+        //checkScores();
         quizOver();
     };
 };
 
 //Function to display ending card
 function quizOver(){
+    recScore();
     console.log("stop!!");
     while (hanger.hasChildNodes()){  
         hanger.removeChild(hanger.firstChild);
@@ -119,7 +121,6 @@ function quizOver(){
     center.textContent = "You scored " + score + " points!";
     center.style.display = "initial";
     startB.style.visibility = "visible";
-    recScore();
 };
 
 //Function to record user score
@@ -128,10 +129,10 @@ function recScore(){
     if(timeRemaining <  0){
         timeRemaining = 0
     }
-    score = score + timeRemaining
+    score = score + timeRemaining;
 
     //Shows name input
-    document.getElementById("nameField").style.display = "initial";
+    nameField.style.display = "initial";
 
     //Creates object to store scores, logs values
     var userScore = {};
@@ -142,8 +143,7 @@ function recScore(){
         userScore.score = score;
         userScores.push(userScore);
         console.log(userScore);
-    })
-    
+    })  
 }
 //Function to highscores
 function checkScores(){

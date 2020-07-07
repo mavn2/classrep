@@ -2,11 +2,11 @@
 var questions = JSON.parse(localStorage.getItem("questions"));
 
 //Vars to access the center card through DOM
-var header = document.getElementById('top');
-var center = document.getElementById('center');
-var footer = document.getElementById('bottom');
-var startB = document.getElementById('start');
-var hanger = document.getElementById('hanger');
+var header = document.getElementById("top");
+var center = document.getElementById("center");
+var footer = document.getElementById("bottom");
+var startB = document.getElementById("start");
+var hanger = document.getElementById("hanger");
 var nameField = document.getElementById("nameField");
 var submit = document.getElementById("save");
 var countDown = document.getElementById("countdown");
@@ -90,7 +90,7 @@ function renderChoices(){
             var pick = this
             submit();
             function submit(){
-                var iNum = pick.getAttribute('data-index-number')
+                var iNum = pick.getAttribute("data-index-number")
                 var sub = questions[qNum].choices[iNum];
                 var check = questions[qNum].answer;
                 if(sub === check){

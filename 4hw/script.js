@@ -131,7 +131,7 @@ function quizOver(){
     startB.style.visibility = "visible";
 };
 
-//Function to record user score
+//Prepares to accept user input
 function recScore(){
     //Calculates score
     if(timeRemaining <  0){
@@ -139,21 +139,21 @@ function recScore(){
     }
     score = score + timeRemaining;
 
-    //Shows inpot,
+    //Shows input field and preps save button
     nameField.style.display = "initial";
     submit.addEventListener("click", function(){
         savScore();
     });
 };
 
-//Function to save score to local storage
+//Saves score to local storage
 function savScore(){
-     //Creates object to store scores, logs values
+     //Logs name/score as obj, adds to array
     uName = document.getElementById("name").value;
     uScore = score;
     userScore = {name: uName, score: uScore}
     userScores.push(userScore);
-   
+    localStorage.setItem("scores",JSON.stringify(userScores))
 }
 
 //Function to highscores

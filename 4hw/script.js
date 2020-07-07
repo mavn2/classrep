@@ -43,7 +43,7 @@ startB.addEventListener("click",function(){
     timer();
     startB.style.visibility = "hidden";
     viewer.style. visibility = "hidden";
-    nameField.style.display = "none";
+    nameField.style.visibility = "none";
 });
 
 //Button to submit stores
@@ -131,9 +131,7 @@ function next(){
 function quizOver(){
     recScore();
     console.log("stop!!");
-    while (hanger.hasChildNodes()){  
-        hanger.removeChild(hanger.firstChild);
-    };
+    clearCard();
     header.textContent = "Coding Quiz!";
     center.textContent = "You scored " + score + " points!";
     center.style.display = "initial";
@@ -166,10 +164,10 @@ function savScore(){
 //Displays top five scores
 function viewScores(){
     userScores.sort(function(a, b){return b.score-a.score})
-    console.log(userScores)
+    clearCard();
 };
 
-//Timer 
+//Timer function
 function timer(){
     var countdown = setInterval(function(){
     timeRemaining--;
@@ -192,3 +190,11 @@ function timer(){
 
     }, 1000)    
 };
+
+//Clears card
+function clearCard(){
+    while (hanger.hasChildNodes()){  
+        hanger.removeChild(hanger.firstChild);
+    };
+    center.style.display = "none";
+}

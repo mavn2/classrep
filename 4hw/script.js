@@ -42,6 +42,7 @@ startB.addEventListener("click",function(){
     renderQuestion();
     timer();
     startB.style.visibility = "hidden";
+    viewer.style. visibility = "hidden";
     nameField.style.display = "none";
 });
 
@@ -137,6 +138,7 @@ function quizOver(){
     center.textContent = "You scored " + score + " points!";
     center.style.display = "initial";
     startB.style.visibility = "visible";
+    viewer.style.visibility = "visible";
 };
 
 //Prepares to accept user input

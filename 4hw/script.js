@@ -1,4 +1,4 @@
-//Allows questions to be quickly accessed from local storage
+//Accesses questions in local storage
 var questions = JSON.parse(localStorage.getItem("questions"));
 
 //Vars to access the center card through DOM
@@ -59,14 +59,14 @@ viewer.addEventListener("click",function(){
     viewScores();
 })
 
-//Function to display quiz in center card
+//Displays quiz question/answers
 function renderQuestion(){
     header.textContent = questions[qNum].title;
     center.style.display = "none";
     renderChoices();
 };
 
-//Displays answer choicesm, defines their behavior
+//Displays answer choices, defines their behavior
 function renderChoices(){
     for(i=0; i<questions[qNum].choices.length;i++){
         //creates element to contain button

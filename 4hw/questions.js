@@ -1,8 +1,8 @@
 var questions = [
   {
-     title: 'the most common color for website text is:',
-     choices: ['black', 'ashwhite','gunsmoke','puce'], 
-     answer: 'black'
+     title: 'the correct way to call a function is',
+     choices: ['fn: name;', 'name();','function name();', 'puce'], 
+     answer: 'name();'
   },
   {
      title: 'The syntax for an object is:',

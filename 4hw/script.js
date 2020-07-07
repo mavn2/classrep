@@ -18,7 +18,8 @@ var score = 0
 var timeRemaining = 75
 var complete = false
 
-//Vars for highscores in local storage
+//
+var scoreArray = []
 var score1 = localStorage.getItem("score1")
 var score2 = localStorage.getItem("score2")
 var score3 = localStorage.getItem("score3")
@@ -119,7 +120,19 @@ function quizOver(){
     startB.style.visibility = "visible";
 };
 
-//Function to check score against highscores
+//Function to record user score
+function recScore(){
+    //Calculates score
+    if(timeRemaining <  0){
+        timeRemaining = 0
+    }
+    score = score + timeRemaining
+
+    //Creates name input
+    
+
+}
+//Function to highscores
 function checkScores(){
     //Calculates Score
     if(timeRemaining <  0){

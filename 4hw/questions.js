@@ -24,9 +24,25 @@ var questions = [
      choices: ['obj.custom()','obj.Custom','obj.custom',],
      answer: 'obj.custom()',
   },
-]
+];
 
+//Saves questions to local storage
 setQuestions();
 function setQuestions(){
     localStorage.setItem("questions",JSON.stringify(questions));
 };
+
+//Placeholder highscore to establish array
+var scores = [
+    {
+      name: "Max",
+      score: 42,
+    },
+];
+
+//Saves scores to local storage
+setHighScores();
+function setHighScores(){
+    localStorage.setItem("scores",JSON.stringify(scores))
+}
+

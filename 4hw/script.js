@@ -6,43 +6,43 @@ var header = document.getElementById('top');
 var center = document.getElementById('center');
 var footer = document.getElementById('bottom');
 var startB = document.getElementById('start');
-var hanger = document.getElementById('hanger')
-var nameField = document.getElementById("nameField")
-var submit = document.getElementById("save")
-var countDown = document.getElementById("countdown")
+var hanger = document.getElementById('hanger');
+var nameField = document.getElementById("nameField");
+var submit = document.getElementById("save");
+var countDown = document.getElementById("countdown");
 
 //Var to store question number
-var qNum=0
+var qNum=0;
 
 //Vars to track/log score
-var score = 0
-var userScores = []
-var userScore = {}
+var score = 0;
+var userScores = JSON.parse(localStorage.getItem("scores"))
+var userScore = {};
 var uName;
 var uScore;
 
 //Vars to control timer
-var timeRemaining = 0
-var complete = false
+var timeRemaining = 0;
+var complete = false;
 
 //Function to display time remaining on page
 function setCountDown(){
-    countDown.textContent = "Time = " + timeRemaining
+    countDown.textContent = "Time = " + timeRemaining;
 };
 
 setCountDown();
 
 //Code for button to start quiz
 startB.addEventListener("click",function(){
-    qNum = 0
-    score = 0
-    timeRemaining = 75
-    complete = false
+    qNum = 0;
+    score = 0;
+    timeRemaining = 75;
+    complete = false;
     setCountDown();
     renderQuestion();
     timer();
-    startB.style.visibility = "hidden"
-    nameField.style.display = "none"
+    startB.style.visibility = "hidden";
+    nameField.style.display = "none";
 });
 
 
@@ -50,7 +50,7 @@ startB.addEventListener("click",function(){
 //Function to display quiz in center card
 function renderQuestion(){
     header.textContent = questions[qNum].title;
-    center.style.display = "none"
+    center.style.display = "none";
     renderChoices();
 };
 
@@ -153,8 +153,7 @@ function savScore(){
     uScore = score;
     userScore = {name: uName, score: uScore}
     userScores.push(userScore);
-    console.log(userScore);
-    console.log(userScores);     
+   
 }
 
 //Function to highscores

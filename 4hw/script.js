@@ -38,12 +38,15 @@ startB.addEventListener("click",function(){
     score = 0;
     timeRemaining = 75;
     complete = false;
-    setCountDown();
+    while (hanger.hasChildNodes()){  
+        hanger.removeChild(hanger.firstChild);
+    };
     renderQuestion();
+    setCountDown();
     timer();
     startB.style.visibility = "hidden";
     viewer.style. visibility = "hidden";
-    nameField.style.display = "none";
+    nameField.style.display = "none"; 
 });
 
 //Button to submit stores
@@ -163,10 +166,17 @@ function savScore(){
     localStorage.setItem("scores",JSON.stringify(userScores))
 }
 
-//Displays top five scores
+//Displays top scores
 function viewScores(){
-    userScores.sort(function(a, b){return b.score-a.score})
-    console.log(userScores)
+    userScores.sort(function(a, b){return b.score-a.score});
+    center.textContent = "Top Scores";
+    nameField.style.display = "none";
+    for(i = 0; i < userScores.length; i++){
+        var hiScore = document.createElement("li");
+        hiScore.setAttribute = ("class", "scoreList");
+        hiScore.textContent = "Name: " + userScores[i].name + "  Score: " + userScores[i].score;
+        hanger.appendChild(hiScore)
+    }
 };
 
 //Timer 

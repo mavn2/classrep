@@ -30,6 +30,8 @@ function setCountDown(){
     countdown.textContent = "Time = " + timeRemaining
 };
 
+setCountDown();
+
 //Code for button to start quiz
 startB.addEventListener("click",function(){
     qNum = 0

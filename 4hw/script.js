@@ -32,6 +32,7 @@ startB.addEventListener("click",function(){
     complete = false
     renderQuestion();
     timer();
+    startB.style.visibility = "hidden"
 });
 
 
@@ -108,6 +109,7 @@ function next(){
 
 //Function to display ending card
 function quizOver(){
+    
     console.log("stop!!");
     while (hanger.hasChildNodes()){  
         hanger.removeChild(hanger.firstChild);
@@ -115,6 +117,7 @@ function quizOver(){
     header.textContent = "Coding Quiz!";
     center.textContent = "You scored " + score + " points!";
     center.style.display = "inline";
+    startB.style.visibility = "visible";
 };
 
 //Function to check score against highscores

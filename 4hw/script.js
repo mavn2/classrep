@@ -118,6 +118,7 @@ function quizOver(){
     center.textContent = "You scored " + score + " points!";
     center.style.display = "initial";
     startB.style.visibility = "visible";
+    recScore();
 };
 
 //Function to record user score
@@ -128,9 +129,9 @@ function recScore(){
     }
     score = score + timeRemaining
 
-    //Creates name input
+    //Shows name input
+    document.getElementById("nameField").style.display = "initial";
     
-
 }
 //Function to highscores
 function checkScores(){

@@ -7,3 +7,6 @@ li{
     max-width: 450px;
 }
 
+#nameField{
+    display: none;
+}

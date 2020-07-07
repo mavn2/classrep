@@ -1,3 +1,9 @@
+/*Styling for Whole Page*/
+body{
+    background-color: whitesmoke;
+}
+
+/*Styling for Card Content*/
 li{
     padding-bottom: 5px;
     padding-top: 5px;
@@ -11,6 +17,15 @@ li{
     display: none;
 }
 
+#start{
+    margin-right: 2.5px;
+}
+
+#view{
+    margin-left: 2.5px;
+}
+
+/*Styling for Card Header*/
 h6{
     margin-top: 0px;
     

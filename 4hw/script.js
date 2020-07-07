@@ -10,6 +10,7 @@ var hanger = document.getElementById('hanger');
 var nameField = document.getElementById("nameField");
 var submit = document.getElementById("save");
 var countDown = document.getElementById("countdown");
+var viewer = document.getElementById("view")
 
 //Var to store question number
 var qNum=0;

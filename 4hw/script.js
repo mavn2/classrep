@@ -115,7 +115,7 @@ function quizOver(){
     };
     header.textContent = "Coding Quiz!";
     center.textContent = "You scored " + score + " points!";
-    center.style.display = "inline";
+    center.style.display = "initial";
     startB.style.visibility = "visible";
 };
 

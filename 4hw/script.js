@@ -74,19 +74,14 @@ function renderChoices(){
         //creates button
         var ansB = document.createElement("button");
         ansB.setAttribute("class","btn btn-primary");
-        //makes i retrievable
         ansB.setAttribute("data-index-number", i);
-        //setting an id for reference
         ansL.setAttribute("class", "answer");
         ansB.innerHTML = questions[qNum].choices[i];
-
-        //places button in li, li in list
         ansL.appendChild(ansB);
         hanger.appendChild(ansL);
 
         //Creates event for button
         ansB.addEventListener("click",function(){
-            //Function to submit/check answer
             var pick = this
             submit();
             function submit(){
@@ -109,7 +104,6 @@ function renderChoices(){
 //Advances to next question or ending
 function next(){
     qNum++;
-    //Renders next question if any remain, results if not
     if(qNum < questions.length){
         while (hanger.hasChildNodes()){  
             hanger.removeChild(hanger.firstChild);
@@ -142,14 +136,11 @@ function recScore(){
         timeRemaining = 0
     }
     score = score + timeRemaining;
-
-    //Shows input field and preps save button
     nameField.style.display = "initial";
 };
 
 //Saves score to local storage
 function savScore(){
-     //Logs name/score as obj, adds to array
     uName = document.getElementById("name").value;
     uScore = score;
     userScore = {name: uName, score: uScore}
@@ -175,8 +166,6 @@ function timer(){
     var countdown = setInterval(function(){
     timeRemaining--;
     setCountDown();
-    
-    
 
     if(timeRemaining === 0 || timeRemaining < 0){
         clearInterval(countdown);
@@ -188,8 +177,6 @@ function timer(){
         timeRemaining = timeRemaining + 1;
         setCountDown();
     }
-
-
 
     }, 1000)    
 };

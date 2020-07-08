@@ -10,21 +10,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!--Page Header-->
   <header>
     <div class="container">
-      <div class="row:"">
+      <div class="row">
         <div class="column">
          <h1>Coding Quiz!</h1>
         </div>
       </div>
     </div>
   </header>
+
+  <!--Quiz Display and Buttons-->
   <main class="container-lg full-width p-0">
     <div class="card shadow-sm">
+      <!--Header-->
         <div class="card-header bg-transparent">
             <h3 class="align-middle text-center" id="top">Coding Quiz!</h3>
             <h6 class="text-right align-middle" id="countdown"></h6>
         </div>
+      <!--Code for start page, end page, and ol to access through DOM-->
         <div class="card-body text-center">
           <p class="card-text" id="center">Take this coding quiz! 15 Seconds per question! Try to get a hi-score!</p>
           <ol class="card-text text-left" id="hanger"></ol>
@@ -36,7 +41,7 @@
             </div>
           </div>
         </div>
-      
+      <!--Footer w/ Buttons-->
         <div class="card-footer text-center bg-transparent" id="bottom">
             <button type="button" class="btn btn-primary" id="start"> Start </button>
             <button type="button" class="btn btn-danger" id="view">Scoreboard</button>
@@ -45,9 +50,9 @@
   </main>
 
 
-  <!--JS file with Questions-->
-  <script src="./questions.js"></scriptsrc></script>
-  <!--JS File with Code-->
+  <!--JS File with Values for Local Storage-->
+  <script src="./questions.js"></script>
+  <!--JS File with other Code-->
   <script src="./script.js"></script>
   <!--Bootstrap JS Links-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -38,9 +38,7 @@ startB.addEventListener("click",function(){
     score = 0;
     timeRemaining = 75;
     complete = false;
-    while (hanger.hasChildNodes()){  
-        hanger.removeChild(hanger.firstChild);
-    };
+    clearHanger();
     renderQuestion();
     setCountDown();
     timer();
@@ -105,9 +103,7 @@ function renderChoices(){
 function next(){
     qNum++;
     if(qNum < questions.length){
-        while (hanger.hasChildNodes()){  
-            hanger.removeChild(hanger.firstChild);
-        };
+        clearHanger();
         renderQuestion();
     } else {
         complete = true
@@ -119,9 +115,7 @@ function next(){
 //Displays ending card
 function quizOver(){
     recScore();
-    while (hanger.hasChildNodes()){  
-        hanger.removeChild(hanger.firstChild);
-    };
+    clearHanger();
     header.textContent = "Coding Quiz!";
     center.textContent = "You scored " + score + " points!";
     center.style.display = "initial";
@@ -161,6 +155,13 @@ function viewScores(){
     }
 };
 
+//Clears ol element
+
+function clearHanger(){
+    while (hanger.hasChildNodes()){  
+        hanger.removeChild(hanger.firstChild);
+    };
+}
 //Timer 
 function timer(){
     var countdown = setInterval(function(){

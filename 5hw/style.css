@@ -4,7 +4,7 @@ body {
   line-height: 1;
 }
 
-textarea{
+textArea{
   background: transparent;
   border: none;
   resize: none;
@@ -55,6 +55,15 @@ textarea{
 .future {
   background-color: #77dd77;
   color: white;
+}
+input {
+  border: none;
+  background: transparent;
+}
+
+.form-control{
+  background: transparent;
+  border: none;
 }
 
 .saveBtn {

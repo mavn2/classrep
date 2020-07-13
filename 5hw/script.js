@@ -65,3 +65,8 @@ function setClasses(){
         };
     };
 };
+
+//Saves input to local storage
+$(".btn").on("click", function(){
+    alert('works')
+})

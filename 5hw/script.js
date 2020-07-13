@@ -20,6 +20,10 @@ var hour8 = moment().hour(16).minute(00).second(00);
 var hour9 = moment().hour(17).minute(00).second(00);
 var hoursArray = [hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9]
 
+//Empty object/array used in save function
+var toDoItem = {}
+var itemArr = []
+
 //Writes times to apropriate rows w/ moment
 setTimes();
 function setTimes(){
@@ -66,7 +70,13 @@ function setClasses(){
     };
 };
 
-//Saves input to local storage
+//Defines save button
 $(".btn").on("click", function(){
-    alert('works')
+    saveToDo();
 })
+
+//Saves user's input to local storage
+function saveToDo(){
+    var input = $(this).siblings().val()
+    console.log(input)
+}

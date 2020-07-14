@@ -35,9 +35,6 @@ function setTimes(){
     $("#hour-9").text(hour9.format("hA")) 
 }
 
-//Gets current time
-//function refresh(time){}
-
 //Checks current time against hours, sets classes accordingly
 setClasses();
 function setClasses(){
@@ -67,7 +64,7 @@ function setClasses(){
     };
 };
 
-//Defines save button
+//Defines save button-setHour is local to any chance of conflict
 $(".btn").on("click", function(){
         var input = $(this).siblings("textarea").val()
         var dIndex = $(this).attr("data-index")
@@ -75,5 +72,15 @@ $(".btn").on("click", function(){
         localStorage.setItem(setHour, input)  
 });
 
-//Checks for items in local storage
-function checkLS()
+//Checks for items in local storage-iString/checkHour are local to prevent any chance of conflict
+checkLS();
+function checkLS(){
+    for(i = 0; i < hoursArray.length; i++){
+        iString = i.toString()
+        var checkHour = hoursArray[i].format("M D YYYY H")
+        var savedEntry = localStorage.getItem(checkHour)
+        if (savedEntry){
+            $("#"+iString).text(savedEntry)
+        }
+    }
+}

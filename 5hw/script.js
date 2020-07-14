@@ -35,6 +35,16 @@ function setTimes(){
     $("#hour-9").text(hour9.format("hA")) 
 }
 
+//Refreshes timer at .5 second intervals
+refreshTime()
+function refreshTime(){
+    setInterval(function(){
+    currentTime = moment();
+    setHeaderDisplay();
+    }, 500);
+
+};
+
 //Checks current time against hours, sets classes accordingly
 setClasses();
 function setClasses(){

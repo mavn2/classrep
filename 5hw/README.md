@@ -2,7 +2,7 @@
 
 ## Description
 
-I was asked with creating a "simple calendar application," for use by 'company employees.' While more fleshed out calendar apps might offer more in depth organization or to-do list type features, this one is intended to function as a light-weight day planner. 
+I was asked with creating a "simple calendar application," for use by 'company employees,' and provided with some pre-existing HTML and CSS code. While more fleshed out calendar apps might offer more in depth organization or to-do list type features, this one is intended to function as a light-weight day planner. 
 Each hour, defined on the left, is represented by a text area in the middle, the color of which changes with the time of day to indicate past, present, or future. The button on the right of each text-area, marked with a classic floppy-disk icon, saves the contents of the corresponding text area to local storage. If the user reopens the app, their saved items are still displayed.
 The code that powers this is fairly simple. Use of the Moment and jQuery libraries allows for relatively succinct manipulation of the HTML interface, and the HTML itself uses semantic tags and common classes. Any future developer who wishes to modify the calendar to their own ends should (hopefully) find it easy to do so.
 

@@ -35,8 +35,8 @@ function setTimes(){
 refreshTime()
 function refreshTime(){
     setInterval(function(){
-    currentTime = moment();
-    setHeaderDisplay();
+        currentTime = moment();
+        setHeaderDisplay();
     }, 500);
 
 };
@@ -72,10 +72,10 @@ function setClasses(){
 
 //Defines save button-setHour is local to any chance of conflict
 $(".btn").on("click", function(){
-        var input = $(this).siblings("textarea").val()
-        var dIndex = $(this).attr("data-index")
-        var setHour = hoursArray[dIndex].format("M D YYYY H")
-        localStorage.setItem(setHour, input)  
+    var input = $(this).siblings("textarea").val()
+    var dIndex = $(this).attr("data-index")
+    var setHour = hoursArray[dIndex].format("M D YYYY H")
+    localStorage.setItem(setHour, input)  
 });
 
 //Checks for items in local storage-checkHour is local to prevent any chance of conflict

@@ -5,7 +5,7 @@ var currentTime = moment();
 //Displays current date/time in header
 setHeaderDisplay();
 function setHeaderDisplay(){
-    $("#currentDay").text(currentTime);
+    $("#currentDay").text(currentTime.format("dddd, MMMM Do, h:mm:ss A"));
 };
 
 //Moment times for each hour

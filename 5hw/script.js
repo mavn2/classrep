@@ -22,6 +22,7 @@ var hoursArray = [hour1, hour2, hour3, hour4, hour5, hour6, hour7, hour8, hour9]
 
 
 //Writes times to apropriate rows w/ moment
+//iString var is local throughout to prevent any conflict, however unlikely
 setTimes();
 function setTimes(){
     for(i = 0; i <hoursArray.length; i++){
@@ -77,7 +78,7 @@ $(".btn").on("click", function(){
         localStorage.setItem(setHour, input)  
 });
 
-//Checks for items in local storage-iString/checkHour are local to prevent any chance of conflict
+//Checks for items in local storage-checkHour is local to prevent any chance of conflict
 checkLS();
 function checkLS(){
     for(i = 0; i < hoursArray.length; i++){

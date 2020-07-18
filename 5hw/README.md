@@ -1,4 +1,4 @@
-# Coding Quiz
+# Daily Planner
 
 ## Description
 

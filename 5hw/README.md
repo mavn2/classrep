@@ -12,11 +12,12 @@ The site can be accessed at [https://mavn2.github.io/classrep/5hw/](https://mavn
 The code is stored in the 5hw folder in the classrep repository on my GitHub page, at [https://github.com/mavn2/classrep/tree/master/5hw](https://github.com/mavn2/classrep/tree/master/5hw).
 
 ![Calendar page with placeholder text](img/1.png)
+
 The calendar app, pictured with placeholder text used during testing. The first text entry exceeds the boundaries of its row, and a scrollbar appears and can be used when it is moused over.
 
 ![Same page, pictured with saved item after refresh](img/2.png)
-The same page after a refresh. The saved text remains, while the longer test entries that went unsaved have been cleared.
 
+The same page after a refresh. The saved text remains, while the longer test entries that went unsaved have been cleared.
 
 ## Tests
 
@@ -33,7 +34,6 @@ Finally, thanks to stackoverflow users Vins and isync, whose responses to this q
     [https://stackoverflow.com/questions/5891840/how-to-use-javascript-variables-in-jquery-selectors]
     (https://stackoverflow.com/questions/5891840/how-to-use-javascript-variables-in-jquery-selectors)
 helped me a great deal.
-
 
 ## License
 

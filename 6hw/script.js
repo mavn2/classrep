@@ -49,7 +49,8 @@ function searchFn() {
                 method: "GET"
             })
                 .then(function(response) {
-                    console.log(response)
+                    var UVEx = response.value
+                    $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>")
                 });
         };;
     });

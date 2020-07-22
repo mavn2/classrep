@@ -13,15 +13,18 @@ sBtn.on("click", function() {
 
 //Function to call/display current weather
 function searchFn() {
+  //Prevents duplicate cards
+  cardCol.empty();
+  //Creates/sends query
   var sTerm = "seattle" //sInput.val().trim();
   var qURL = "https://api.openweathermap.org/data/2.5/weather?q=" + sTerm + "&appid=" + key;
-  checkCard();
   $.ajax({
       url: qURL,
       method: "GET"
   })
     .then(function(response) {
       console.log(response)
+      //retrieves data from JSON
       var name = response.name;
       var icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>"
       var time = response.dt + response.timezone
@@ -30,7 +33,7 @@ function searchFn() {
       var wSpd = response.wind.speed + " MPH";
       var lat = response.coord.lat;
       var long = response.coord.lon;
-      console.log(temp, name, hum, wSpd, lat, long, icon, time);
+      //Displays weather information
         var displayCard = $("<div>");
         displayCard.attr("class", "card");
         cardCol.append(displayCard);
@@ -42,6 +45,7 @@ function searchFn() {
           "</p><p class='card-text' id='UVD'>" +
           "</p></div>"
         );
+        //Finds/displays UV index
         findUV();
         function findUV(){
             qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" +lat +"&lon=" + long
@@ -57,12 +61,6 @@ function searchFn() {
     });
 };
 
-//Checks for/prevents duplicate cards
-function checkCard() {
-  if(cardCol.is(':parent')){
-    cardCol.empty();
-  };
-};
 
 //function to retrieve/display UV Index
 

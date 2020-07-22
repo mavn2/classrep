@@ -15,6 +15,7 @@ sBtn.on("click", function() {
 function searchFn() {
   var sTerm = "seattle" //sInput.val().trim();
   var qURL = "https://api.openweathermap.org/data/2.5/weather?q=" + sTerm + "&appid=" + key;
+  checkCard();
   $.ajax({
       url: qURL,
       method: "GET"
@@ -56,12 +57,12 @@ function searchFn() {
     });
 };
 
-//function to retrieve/display UV Index
+//Checks for/prevents duplicate cards
+function checkCard() {
+  if(cardCol.is(':parent')){
+    cardCol.empty();
+  };
+};
 
-//function findUV(){
-    //qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=&lat={lat}&lon={lon}"
-    //$ajax({
-        
-    //})
-//}
+//function to retrieve/display UV Index
 

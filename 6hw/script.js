@@ -22,7 +22,7 @@ function searchFn() {
     .then(function(response) {
       console.log(response)
       var name = response.name;
-      var icon = response.weather[0].icon
+      var icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>"
       var time = response.dt + response.timezone
       var temp = Math.round((response.main.temp - 273.15) * 1.8 + 32) + " °F";
       var hum = response.main.humidity + "%";

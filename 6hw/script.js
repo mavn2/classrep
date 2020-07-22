@@ -15,8 +15,6 @@ sBtn.on("click", function() {
 function searchFn() {
   var sTerm = "seattle" //sInput.val().trim();
   var qURL = "https://api.openweathermap.org/data/2.5/weather?q=" + sTerm + "&appid=" + key;
-  console.log (qURL)
-  console.log(sTerm)
   $.ajax({
       url: qURL,
       method: "GET"

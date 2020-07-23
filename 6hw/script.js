@@ -1,4 +1,4 @@
-//Vars for use in AJAX call
+//Vars for use in AJAX calls
 var key;
 var icon;
 var sTerm;
@@ -7,23 +7,24 @@ var lon;
 var name;
 
 //Vars for accessing html
-sBtn = $("#search-btn")
-sInput = $("#search-inp")
-cardCol = $("#main")
-subCol = $("#sub")
+sBtn = $("#search-btn");
+sInput = $("#search-inp");
+cardCol = $("#main");
+subCol = $("#sub");
 
 //Vars for buttons/local storage
 var cities = [];
 var city;
-//See fn on 137
+
+//Checks for initial search to display
 checkStorage();
 
 //Onclick function for search input
 sBtn.on("click", function() {
   sTerm = sInput.val().trim();
-  event.preventDefault()
+  event.preventDefault();
   getForecasts();
-  localStorage.setItem("city", sTerm)
+  localStorage.setItem("city", sTerm);
 });
 
 //Retrieves/displays current weather
@@ -48,7 +49,6 @@ function currentForecast(response){
   cardCol.empty();
 
   //retrieves data from JSON
-  console.log(response)
   name = response.name;
   icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
   var date = "(" + timeConverter(response.dt + response.timezone) + ")";
@@ -80,6 +80,7 @@ function findUV(){
     method: "GET"
     })
       .then(function(response) {
+        //determones UV Index color based on intensity
         var UVEx = response.value;
         if(UVEx > 8) {
           $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>");
@@ -96,17 +97,19 @@ function fiveForecast(){
   //Prevents duplicates
   subCol.empty();
   $("#secHeader").remove()
+  //Creates section header
   var secHeader = $("<h4>").html("5-Day Forecast").attr("id", "secHeader")
   $(main).after(secHeader)
-  //Retrieves/displays forecast
+  //Retrieves forecast
   var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&units=imperial&appid=" + key
     $.ajax({
       url: qURL,
       method: "GET"
     })
+    //Creates cards
       .then(function(response) {
         for(i = 1; i < 6; i++){
-          var date = "<h5 class='card-title'>"+ timeConverter(response.daily[i].dt) + "</h5>"
+          var date = "<h5 class='card-title'>"+ timeConverter(response.daily[i].dt) + "</h5>";
           icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";
           var temp = "<p class='card-text'> Temp: " + response.daily[i].temp.day + " °F</p>";
           var hum = "<p class='card-text'> Humidity: " + response.daily[i].humidity + " %</p>";
@@ -115,7 +118,7 @@ function fiveForecast(){
           subCol.append(card);
         };
       });
-}
+};
 
 //Checks if button is needed
 function btnCheck(){
@@ -128,25 +131,25 @@ function btnCheck(){
       };
     };
     btnGen();
-  }
-}
+  };
+};
 
 //Creates button
 function btnGen() {
-  cities.push(name)
+  cities.push(name);
   var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name);
   $(".list-group").append(btn);
   $("#"+name).on("click", function(){
     sTerm = $(this).attr("id");
     getForecasts();
   });
-}
+};
 
 //Checks for/renders last city viewed
 function checkStorage() {
   var storedCity = localStorage.getItem("city");
   if(storedCity) {
-    sTerm = storedCity
+    sTerm = storedCity;
     getForecasts();
   };
 };
@@ -159,6 +162,6 @@ function timeConverter(UNIX) {
   var year = a.getFullYear();
   var month = months[a.getMonth()];
   var date = a.getDate();
-  var displayedDate = month + "/" + date + "/" + year
+  var displayedDate = month + "/" + date + "/" + year;
   return displayedDate;
-}
+};

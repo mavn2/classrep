@@ -24,8 +24,6 @@ sBtn.on("click", function() {
 
 //Retrieves/displays current weather
 function getForecasts() {
-  //Prevents duplicate cards
-  cardCol.empty();
 
   //Creates/sends initial query using global variables
   var qURL = "https://api.openweathermap.org/data/2.5/weather?q=" + sTerm + "&units=imperial&appid=" + key;
@@ -36,12 +34,15 @@ function getForecasts() {
     .then(function(response) {
       currentForecast(response);
       fiveForecast();
-      mkBTn();
+      btnCheck();
       });
 };
 
 //Displays current forecast
 function currentForecast(response){
+  //Prevents duplicate cards
+  cardCol.empty();
+
   //retrieves data from JSON
   name = response.name;
   icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
@@ -103,22 +104,28 @@ function fiveForecast(){
       });
 }
 
-//Creates Button
-function mkBTn(){
+//Checks if button is needed
+function btnCheck(){
   if (cities.length === 0){
-    cities.push(name)
-    var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
-    $(".list-group").append(btn)
-    $("#"+name).on("click", function(){
-      sTerm = $(this).attr("id");
-      getForecasts();
-    });
+    btnGen();
   } else {
     for(i = 0; i < cities.length; i++){
       if(cities[i] === name){
         return;
-      }
-
-    }
+      };
+    };
+    console.log("?")
+    btnGen();
   }
+}
+
+//Creates button
+function btnGen(){
+  cities.push(name)
+  var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
+  $(".list-group").append(btn)
+  $("#"+name).on("click", function(){
+    sTerm = $(this).attr("id");
+    getForecasts();
+  });
 }

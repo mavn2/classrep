@@ -1,7 +1,7 @@
 //Vars for use in AJAX call
 var key;
 var icon;
-var sTerm = "Seattle"
+var sTerm;
 var lat;
 var lon;
 var name;
@@ -15,8 +15,9 @@ subCol = $("#sub")
 //Vars for buttons/local storage
 var cities = [];
 
-//Onclick function for search button
+//Onclick function for search input
 sBtn.on("click", function() {
+  sTerm = sInput.val().trim();
   event.preventDefault()
   getForecasts();
 });
@@ -25,8 +26,8 @@ sBtn.on("click", function() {
 function getForecasts() {
   //Prevents duplicate cards
   cardCol.empty();
-  //Creates/sends query
-  //sTerm = "seattle" //sInput.val().trim();  Dont forget!!
+
+  //Creates/sends initial query using global variables
   var qURL = "https://api.openweathermap.org/data/2.5/weather?q=" + sTerm + "&units=imperial&appid=" + key;
   $.ajax({
       url: qURL,
@@ -80,7 +81,6 @@ function findUV(){
 
 //Retrieves/displays five-day forecast
 function fiveForecast(){
-  //var sTerm = sInput.val().trim()  Don't forget!
   //Prevents duplicates
   subCol.empty();
   //Retrieves/displays forecast
@@ -110,7 +110,7 @@ function mkBTn(){
     var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
     $(".list-group").append(btn)
     $("#"+name).on("click", function(){
-      console.log("test")
+      
     })
   } else {
     for(i = 0; i < cities.length; i++){

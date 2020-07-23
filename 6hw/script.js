@@ -93,6 +93,8 @@ function findUV(){
 function fiveForecast(){
   //Prevents duplicates
   subCol.empty();
+  var secHeader = $("<h4>").html("5-Day Forecast")
+  $(main).after(secHeader)
   //Retrieves/displays forecast
   var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&units=imperial&appid=" + key
     $.ajax({
@@ -107,7 +109,6 @@ function fiveForecast(){
           var hum = "<p class='card-text'> Humidity: " + response.daily[i].humidity + " %</p>";
           var content = $("<div>").attr("class", "card-body").css("background-color", "blue").html(date + icon + temp + hum)
           var card = $("<div>").attr("class", "card").html(content)
-          //var align = $("<div>").attr("class", "col").html(card);
           subCol.append(card);
         };
       });

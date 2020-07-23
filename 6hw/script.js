@@ -80,8 +80,9 @@ function fiveForecast(){
         for(i = 1; i < 6; i++){
           var card = $("<div>").attr("class", "card")
           var date = response.daily[i].dt;
-          var temp = response.daily[i]
-          console.log(date);
+          var temp = response.daily[i].temp.day + " °F"
+          var hum = response.daily[i].humidity + " %"
+          console.log(temp, hum);
         };
       });
 }

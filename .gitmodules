@@ -1,0 +1,3 @@
+[submodule "6hw/weatherkey"]
+	path = 6hw/weatherkey
+	url = git@github.com:mavn2/weatherkey.git

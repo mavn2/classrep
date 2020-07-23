@@ -9,7 +9,6 @@
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 100; /* Behind the navbar */
   padding: 65px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
@@ -31,6 +30,7 @@
 
 .input-group{
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 /*Central display*/

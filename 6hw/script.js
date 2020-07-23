@@ -33,43 +33,50 @@ function getForecasts() {
       method: "GET"
   })
     .then(function(response) {
-      //retrieves data from JSON
-      name = response.name;
-      icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
-      var time = response.dt + response.timezone;
-      var temp = response.main.temp + " °F";
-      var hum = response.main.humidity + "%";
-      var wSpd = response.wind.speed + " MPH";
-      lat = response.coord.lat;
-      lon = response.coord.lon;
-      //Displays weather information
-        var displayCard = $("<div>");
-        displayCard.attr("class", "card");
-        cardCol.append(displayCard);
-        displayCard.html("<div class='card-body'><h5 class='card-title'>" + name + " " + icon +
-          "</h5><p class='card-text'> Temperature: " + temp +
-          "</p><p class='card-text'> Humidity: " + hum +
-          "</p><p class='card-text'> Windspeed: " + wSpd +
-          "</p><p class='card-text' id='UVD'>" +
-          "</p></div>"
-        );
-        //Finds/displays UV index
-        findUV();
-        function findUV(){
-            qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" +lat +"&lon=" + lon
-            $.ajax({
-                url: qURL,
-                method: "GET"
-            })
-                .then(function(response) {
-                    var UVEx = response.value;
-                    $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>");
-                });
-        };
-        fiveForecast();
-        mkBTn();
+      currentForecast(response);
+      fiveForecast();
+      mkBTn();
       });
 };
+
+//Displays current forecast
+function currentForecast(response){
+  //retrieves data from JSON
+  name = response.name;
+  icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
+  var time = response.dt + response.timezone;
+  var temp = response.main.temp + " °F";
+  var hum = response.main.humidity + "%";
+  var wSpd = response.wind.speed + " MPH";
+  lat = response.coord.lat;
+  lon = response.coord.lon;
+  //Displays weather information
+  var displayCard = $("<div>");
+  displayCard.attr("class", "card");
+  cardCol.append(displayCard);
+  displayCard.html("<div class='card-body'><h5 class='card-title'>" + name + " " + icon +
+    "</h5><p class='card-text'> Temperature: " + temp +
+    "</p><p class='card-text'> Humidity: " + hum +
+    "</p><p class='card-text'> Windspeed: " + wSpd +
+    "</p><p class='card-text' id='UVD'>" +
+    "</p></div>"
+    );
+  //Finds/displays UV index
+  findUV();
+}
+
+//Finds/Displays UV index
+function findUV(){
+  qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" +lat +"&lon=" + lon
+  $.ajax({
+    url: qURL,
+    method: "GET"
+    })
+      .then(function(response) {
+        var UVEx = response.value;
+        $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>");
+        });
+  };
 
 //Retrieves/displays five-day forecast
 function fiveForecast(){
@@ -100,8 +107,8 @@ function fiveForecast(){
 function mkBTn(){
   if (cities.length === 0){
     cities.push(name)
-    var btn = $("<button>").attr({class: "btn btn-info", id: name}).html(name)
-    $(".sidebar-sticky").append(btn)
+    var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
+    $(".list-group").append(btn)
     $("#"+name).on("click", function(){
       console.log("test")
     })

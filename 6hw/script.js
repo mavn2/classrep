@@ -93,7 +93,8 @@ function findUV(){
 function fiveForecast(){
   //Prevents duplicates
   subCol.empty();
-  var secHeader = $("<h4>").html("5-Day Forecast")
+  $("#secHeader").remove()
+  var secHeader = $("<h4>").html("5-Day Forecast").attr("id", "secHeader")
   $(main).after(secHeader)
   //Retrieves/displays forecast
   var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&units=imperial&appid=" + key

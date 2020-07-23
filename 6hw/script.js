@@ -15,6 +15,9 @@ subCol = $("#sub")
 //Vars for buttons/local storage
 var cities = [];
 
+//See fn on 136
+checkStorage();
+
 //Onclick function for search input
 sBtn.on("click", function() {
   sTerm = sInput.val().trim();
@@ -119,14 +122,25 @@ function btnCheck(){
 }
 
 //Creates button
-function btnGen(){
+function btnGen() {
   cities.push(name)
-  var localCities = JSON.stringify(cities)
-  localStorage.setItem("cities", localCities)
-  var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
-  $(".list-group").append(btn)
+  var localCities = JSON.stringify(cities);
+  localStorage.setItem("cities", localCities);
+  var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name);
+  $(".list-group").append(btn);
   $("#"+name).on("click", function(){
     sTerm = $(this).attr("id");
     getForecasts();
   });
 }
+
+//Checks for/renders last city viewed
+function checkStorage() {
+  var storedCities = localStorage.getItem("cities");
+  if(storedCities) {
+    cities = JSON.parse(storedCities);
+    var i = cities.length - 1
+    sTerm = cities[i]
+    getForecasts();
+  };
+};

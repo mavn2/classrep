@@ -1,0 +1,3 @@
+[submodule "weatherkey"]
+	path = weatherkey
+	url = https://github.com/mavn2/weatherkey.git

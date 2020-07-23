@@ -66,12 +66,11 @@ function currentForecast(response){
     "</p><p class='card-text'> Windspeed: " + wSpd +
     "</p><p class='card-text' id='UVD'>" +
     "</p></div>"
-    );
-  //Finds/displays UV index
+  );
   findUV();
 }
 
-//Finds/Displays UV index
+//Finds/displays UV index
 function findUV(){
   qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" +lat +"&lon=" + lon
   $.ajax({
@@ -80,7 +79,13 @@ function findUV(){
     })
       .then(function(response) {
         var UVEx = response.value;
-        $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>");
+        if(UVEx > 8) {
+          $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>");
+        } else if(UVEx > 3){
+          $("#UVD").html("UV Index: <span class='badge badge-warning'>" + UVEx + "</span>");
+        } else {
+          $("#UVD").html("UV Index: <span class='badge badge-success'>" + UVEx + "</span>");
+        }
         });
   };
 
@@ -102,8 +107,8 @@ function fiveForecast(){
           var hum = "<p class='card-text'> Humidity: " + response.daily[i].humidity + " %</p>";
           var content = $("<div>").attr("class", "card-body").css("background-color", "blue").html(date + icon + temp + hum)
           var card = $("<div>").attr("class", "card").html(content)
-          var align = $("<div>").attr("class", "col").html(card);
-          subCol.append(align);
+          //var align = $("<div>").attr("class", "col").html(card);
+          subCol.append(card);
         };
       });
 }

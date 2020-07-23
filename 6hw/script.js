@@ -14,7 +14,7 @@ subCol = $("#sub")
 
 //Vars for buttons/local storage
 var cities = [];
-
+var city;
 //See fn on 137
 checkStorage();
 
@@ -23,6 +23,7 @@ sBtn.on("click", function() {
   sTerm = sInput.val().trim();
   event.preventDefault()
   getForecasts();
+  localStorage.setItem("city", sTerm)
 });
 
 //Retrieves/displays current weather
@@ -56,6 +57,7 @@ function currentForecast(response){
   var wSpd = response.wind.speed + " MPH";
   lat = response.coord.lat;
   lon = response.coord.lon;
+
   //Displays weather information
   var displayCard = $("<div>");
   displayCard.attr("class", "card");
@@ -132,8 +134,6 @@ function btnCheck(){
 //Creates button
 function btnGen() {
   cities.push(name)
-  var localCities = JSON.stringify(cities);
-  localStorage.setItem("cities", localCities);
   var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name);
   $(".list-group").append(btn);
   $("#"+name).on("click", function(){
@@ -144,11 +144,9 @@ function btnGen() {
 
 //Checks for/renders last city viewed
 function checkStorage() {
-  var storedCities = localStorage.getItem("cities");
-  if(storedCities) {
-    cities = JSON.parse(storedCities);
-    var i = cities.length - 1
-    sTerm = cities[i]
+  var storedCity = localStorage.getItem("city");
+  if(storedCity) {
+    sTerm = storedCity
     getForecasts();
   };
 };

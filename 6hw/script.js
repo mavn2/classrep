@@ -77,7 +77,8 @@ function fiveForecast(){
       method: "GET"
     })
       .then(function(response) {
-        console.log(response);
+        header = $("<div>").attr("class", "row").html("<h4> 5 Day Forecast </h4>")
+        subCol.append(header)
         for(i = 1; i < 6; i++){
           var date = "<h5 class='card-title'>"+ response.daily[i].dt + "</h5>"
           icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";

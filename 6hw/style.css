@@ -35,8 +35,9 @@
 
 /*Central display*/
 
-main{
+.col-10 {
   padding-top: 19px;
+  padding-left: 300px;
 }
 
 

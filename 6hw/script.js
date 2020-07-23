@@ -1,22 +1,27 @@
 //Vars for use in AJAX call
 var key;
+var icon;
+var sTerm = "Seattle"
+var lat;
+var lon;
 //Vars for accessing html
 sBtn = $("#search-btn")
 sInput = $("#search-inp")
 cardCol = $("#main")
+subCol = $("#sub")
 
 //Onclick function for search button
 sBtn.on("click", function() {
   event.preventDefault()
-  searchFn();
+  getForecasts();
 });
 
-//Function to call/display current weather
-function searchFn() {
+//Retrieves/displays current weather
+function getForecasts() {
   //Prevents duplicate cards
   cardCol.empty();
   //Creates/sends query
-  var sTerm = "seattle" //sInput.val().trim();
+  //sTerm = "seattle" //sInput.val().trim();  Dont forget!!
   var qURL = "https://api.openweathermap.org/data/2.5/weather?q=" + sTerm + "&appid=" + key;
   $.ajax({
       url: qURL,
@@ -26,13 +31,13 @@ function searchFn() {
       console.log(response)
       //retrieves data from JSON
       var name = response.name;
-      var icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>"
-      var time = response.dt + response.timezone
+        icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
+      var time = response.dt + response.timezone;
       var temp = Math.round((response.main.temp - 273.15) * 1.8 + 32) + " °F";
       var hum = response.main.humidity + "%";
       var wSpd = response.wind.speed + " MPH";
-      var lat = response.coord.lat;
-      var long = response.coord.lon;
+      lat = response.coord.lat;
+      lon = response.coord.lon;
       //Displays weather information
         var displayCard = $("<div>");
         displayCard.attr("class", "card");
@@ -48,19 +53,32 @@ function searchFn() {
         //Finds/displays UV index
         findUV();
         function findUV(){
-            qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" +lat +"&lon=" + long
+            qURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" +lat +"&lon=" + lon
             $.ajax({
                 url: qURL,
                 method: "GET"
             })
                 .then(function(response) {
-                    var UVEx = response.value
-                    $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>")
+                    var UVEx = response.value;
+                    $("#UVD").html("UV Index: <span class='badge badge-danger'>" + UVEx + "</span>");
                 });
         };;
-    });
+        fiveForecast();
+      });
 };
 
-
-//function to retrieve/display UV Index
+//Retrieves/displays five-day forecast
+function fiveForecast(){
+  //var sTerm = sInput.val().trim()  Don't forget!
+  //Prevents duplicates
+  subCol.empty();
+  var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&appid=" + key
+    $.ajax({
+      url: qURL,
+      method: "GET"
+    })
+      .then(function(response) {
+        console.log(response)
+      })
+}
 

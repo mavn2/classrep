@@ -4,6 +4,7 @@ var icon;
 var sTerm = "Seattle"
 var lat;
 var lon;
+
 //Vars for accessing html
 sBtn = $("#search-btn")
 sInput = $("#search-inp")
@@ -78,11 +79,14 @@ function fiveForecast(){
       .then(function(response) {
         console.log(response);
         for(i = 1; i < 6; i++){
-          var card = $("<div>").attr("class", "card")
-          var date = response.daily[i].dt;
-          var temp = response.daily[i].temp.day + " °F"
-          var hum = response.daily[i].humidity + " %"
-          console.log(temp, hum);
+          var date = "<h5 class='card-title'>"+ response.daily[i].dt + "</h5>"
+          icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";
+          var temp = response.daily[i].temp.day + " °F";
+          var hum = response.daily[i].humidity + " %";
+          var content = $("<div>").attr("class", "card-body").css("background-color", "blue").html(date + icon)
+          var card = $("<div>").attr("class", "card").html(content)
+          var align = $("<div>").attr("class", "col").html(card);
+          subCol.append(align);
         };
       });
 }

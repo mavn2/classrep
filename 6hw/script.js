@@ -47,9 +47,10 @@ function currentForecast(response){
   cardCol.empty();
 
   //retrieves data from JSON
+  console.log(response)
   name = response.name;
   icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
-  var time = response.dt + response.timezone;
+  var date = "(" + timeConverter(response.dt + response.timezone) + ")";
   var temp = response.main.temp + " °F";
   var hum = response.main.humidity + "%";
   var wSpd = response.wind.speed + " MPH";
@@ -59,8 +60,8 @@ function currentForecast(response){
   var displayCard = $("<div>");
   displayCard.attr("class", "card");
   cardCol.append(displayCard);
-  displayCard.html("<div class='card-body'><h5 class='card-title'>" + name + " " + icon +
-    "</h5><p class='card-text'> Temperature: " + temp +
+  displayCard.html("<div class='card-body'><h4 class='card-title'>" + name + " " + date + icon +
+    "</h4><p class='card-text'> Temperature: " + temp +
     "</p><p class='card-text'> Humidity: " + hum +
     "</p><p class='card-text'> Windspeed: " + wSpd +
     "</p><p class='card-text' id='UVD'>" +
@@ -95,7 +96,7 @@ function fiveForecast(){
     })
       .then(function(response) {
         for(i = 1; i < 6; i++){
-          var date = "<h5 class='card-title'>"+ response.daily[i].dt + "</h5>"
+          var date = "<h5 class='card-title'>"+ timeConverter(response.daily[i].dt) + "</h5>"
           icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";
           var temp = "<p class='card-text'> Temp: " + response.daily[i].temp.day + " °F</p>";
           var hum = "<p class='card-text'> Humidity: " + response.daily[i].humidity + " %</p>";

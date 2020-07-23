@@ -110,10 +110,14 @@ function mkBTn(){
     var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
     $(".list-group").append(btn)
     $("#"+name).on("click", function(){
-      
-    })
+      sTerm = $(this).attr("id");
+      getForecasts();
+    });
   } else {
     for(i = 0; i < cities.length; i++){
+      if(cities[i] === name){
+        return;
+      }
 
     }
   }

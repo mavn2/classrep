@@ -15,7 +15,7 @@ subCol = $("#sub")
 //Vars for buttons/local storage
 var cities = [];
 
-//See fn on 136
+//See fn on 137
 checkStorage();
 
 //Onclick function for search input
@@ -144,3 +144,15 @@ function checkStorage() {
     getForecasts();
   };
 };
+
+//Converts Unix time, renders M/DD/YYYY
+//Adapted from function posted by user Pitu on stackoverflow, see README.md
+function timeConverter(UNIX) {
+  var a = new Date(UNIX * 1000);
+  var months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var displayedDate = month + "/" + date + "/" + year
+  return displayedDate;
+}

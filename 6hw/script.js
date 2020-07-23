@@ -25,6 +25,7 @@ sBtn.on("click", function() {
   event.preventDefault();
   getForecasts();
   localStorage.setItem("city", sTerm);
+  sInput.val("").trigger("change")
 });
 
 //Retrieves/displays current weather

@@ -114,7 +114,6 @@ function btnCheck(){
         return;
       };
     };
-    console.log("?")
     btnGen();
   }
 }
@@ -122,6 +121,8 @@ function btnCheck(){
 //Creates button
 function btnGen(){
   cities.push(name)
+  var localCities = JSON.stringify(cities)
+  localStorage.setItem("cities", localCities)
   var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name)
   $(".list-group").append(btn)
   $("#"+name).on("click", function(){

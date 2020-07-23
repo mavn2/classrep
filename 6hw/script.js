@@ -4,12 +4,16 @@ var icon;
 var sTerm = "Seattle"
 var lat;
 var lon;
+var name;
 
 //Vars for accessing html
 sBtn = $("#search-btn")
 sInput = $("#search-inp")
 cardCol = $("#main")
 subCol = $("#sub")
+
+//Vars for buttons/local storage
+var cities = [];
 
 //Onclick function for search button
 sBtn.on("click", function() {
@@ -30,8 +34,8 @@ function getForecasts() {
   })
     .then(function(response) {
       //retrieves data from JSON
-      var name = response.name;
-        icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
+      name = response.name;
+      icon = "<img src='http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png'/>";
       var time = response.dt + response.timezone;
       var temp = response.main.temp + " °F";
       var hum = response.main.humidity + "%";
@@ -63,6 +67,7 @@ function getForecasts() {
                 });
         };
         fiveForecast();
+        mkBTn();
       });
 };
 
@@ -71,14 +76,13 @@ function fiveForecast(){
   //var sTerm = sInput.val().trim()  Don't forget!
   //Prevents duplicates
   subCol.empty();
+  //Retrieves/displays forecast
   var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&units=imperial&appid=" + key
     $.ajax({
       url: qURL,
       method: "GET"
     })
       .then(function(response) {
-        header = $("<div>").attr("class", "row").html("<h4> 5 Day Forecast </h4>")
-        subCol.append(header)
         for(i = 1; i < 6; i++){
           var date = "<h5 class='card-title'>"+ response.daily[i].dt + "</h5>"
           icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";
@@ -92,3 +96,18 @@ function fiveForecast(){
       });
 }
 
+//Creates Button
+function mkBTn(){
+  if (cities.length === 0){
+    cities.push(name)
+    var btn = $("<button>").attr({class: "btn btn-info", id: name}).html(name)
+    $(".sidebar-sticky").append(btn)
+    $("#"+name).on("click", function(){
+      console.log("test")
+    })
+  } else {
+    for(i = 0; i < cities.length; i++){
+
+    }
+  }
+}

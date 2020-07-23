@@ -33,11 +33,16 @@
   padding-bottom: 10px;
 }
 
+.nav h5{
+  padding-left: 10px;
+}
+
 /*Central display*/
 
 .col-10 {
   padding-top: 19px;
   padding-left: 300px;
 }
+
 
 

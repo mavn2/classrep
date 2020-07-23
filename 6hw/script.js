@@ -107,7 +107,7 @@ function fiveForecast(){
           icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";
           var temp = "<p class='card-text'> Temp: " + response.daily[i].temp.day + " °F</p>";
           var hum = "<p class='card-text'> Humidity: " + response.daily[i].humidity + " %</p>";
-          var content = $("<div>").attr("class", "card-body").css("background-color", "blue").html(date + icon + temp + hum)
+          var content = $("<div>").attr("class", "card-body").css({"background-color": "blue", "color" : "white"}).html(date + icon + temp + hum)
           var card = $("<div>").attr("class", "card").html(content)
           subCol.append(card);
         };

@@ -62,6 +62,7 @@ function currentForecast(response){
   lat = response.coord.lat;
   lon = response.coord.lon;
 
+  //Saves last search to local storage
   localStorage.setItem("city", name);
 
   //Displays weather information

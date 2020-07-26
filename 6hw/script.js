@@ -134,16 +134,21 @@ function btnCheck(){
   };
 };
 
-//Creates button
+//Stores searched city and creates button
 function btnGen() {
   cities.push(name);
+  btnMk(name);
+  localStorage.setItem("cities", JSON.stringify(cities))
+};
+
+function btnMk(name){
   var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name);
   $(".list-group").append(btn);
-  $("#"+name).on("click", function(){
+  $("#" + name).on("click", function(){
     sTerm = $(this).attr("id");
     getForecasts();
   });
-};
+}
 
 //Checks for/renders last city viewed
 function checkStorage() {
@@ -151,6 +156,14 @@ function checkStorage() {
   if(storedCity) {
     sTerm = storedCity;
     getForecasts();
+  };
+  var storedCities = localStorage.getItem("cities")
+  if (storedCities){
+    cities = JSON.parse(storedCities)
+    for (i=0; i < cities.length; i++){
+      name = cities[i]
+      btnMk(name);
+    };
   };
 };
 

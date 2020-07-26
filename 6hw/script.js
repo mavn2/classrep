@@ -22,7 +22,6 @@ checkStorage();
 //Alerts if search fails
 $(document).ajaxError(function(){
   alert("Search failed! Please enter city with care.");
-  localStorage.removeItem("city");
 });
 
 //Onclick function for search input
@@ -30,7 +29,6 @@ sBtn.on("click", function() {
   sTerm = sInput.val().trim();
   event.preventDefault();
   getForecasts();
-  localStorage.setItem("city", sTerm);
   sInput.val("").trigger("change");
 });
 
@@ -63,6 +61,8 @@ function currentForecast(response){
   var wSpd = response.wind.speed + " MPH";
   lat = response.coord.lat;
   lon = response.coord.lon;
+
+  localStorage.setItem("city", name);
 
   //Displays weather information
   var displayCard = $("<div>");

@@ -25,7 +25,7 @@ sBtn.on("click", function() {
   event.preventDefault();
   getForecasts();
   localStorage.setItem("city", sTerm);
-  sInput.val("").trigger("change")
+  sInput.val("").trigger("change");
 });
 
 //Retrieves/displays current weather
@@ -96,12 +96,12 @@ function findUV(){
 function fiveForecast(){
   //Prevents duplicates
   subCol.empty();
-  $("#secHeader").remove()
+  $("#secHeader").remove();
   //Creates section header
-  var secHeader = $("<h4>").html("5-Day Forecast").attr("id", "secHeader")
-  $(main).after(secHeader)
+  var secHeader = $("<h4>").html("5-Day Forecast").attr("id", "secHeader");
+  $(main).after(secHeader);
   //Retrieves forecast
-  var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&units=imperial&appid=" + key
+  var qURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +"&exclude=current,minutely,hourly&units=imperial&appid=" + key;
     $.ajax({
       url: qURL,
       method: "GET"
@@ -113,8 +113,8 @@ function fiveForecast(){
           icon = "<img src='http://openweathermap.org/img/wn/" + response.daily[i].weather[0].icon + ".png'/>";
           var temp = "<p class='card-text'> Temp: " + response.daily[i].temp.day + " °F</p>";
           var hum = "<p class='card-text'> Humidity: " + response.daily[i].humidity + " %</p>";
-          var content = $("<div>").attr("class", "card-body").css({"background-color": "blue", "color" : "white"}).html(date + icon + temp + hum)
-          var card = $("<div>").attr("class", "card").html(content)
+          var content = $("<div>").attr("class", "card-body").css({"background-color": "blue", "color" : "white"}).html(date + icon + temp + hum);
+          var card = $("<div>").attr("class", "card").html(content);
           subCol.append(card);
         };
       });
@@ -138,15 +138,37 @@ function btnCheck(){
 function btnGen() {
   cities.push(name);
   btnMk(name);
-  localStorage.setItem("cities", JSON.stringify(cities))
+  btnClear();
+  localStorage.setItem("cities", JSON.stringify(cities));
 };
 
+//Handles individual button creation
 function btnMk(name){
   var btn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: name}).html(name);
   $(".list-group").append(btn);
   $("#" + name).on("click", function(){
     sTerm = $(this).attr("id");
     getForecasts();
+  });
+}
+
+function btnClear(){
+  //Deletes button if present
+  if ($("#clearBtn").length){
+    $("#clearBtn").remove();
+  };
+  //Defines clear button, appends to list
+  var cBtn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: "clearBtn"}).html("Clear");
+  $(".list-group").append(cBtn);
+  $(cBtn).on("click", function() {
+    cities = [];
+    city = undefined;
+    localStorage.removeItem("city");
+    localStorage.removeItem("cities");
+    $(".list-group").empty();
+    cardCol.empty();
+    subCol.empty();
+    $("#secHeader").remove();
   });
 }
 
@@ -161,9 +183,10 @@ function checkStorage() {
   if (storedCities){
     cities = JSON.parse(storedCities)
     for (i=0; i < cities.length; i++){
-      name = cities[i]
+      name = cities[i];
       btnMk(name);
     };
+    btnClear();
   };
 };
 

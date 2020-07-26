@@ -22,6 +22,7 @@ checkStorage();
 //Alerts if search fails
 $(document).ajaxError(function(){
   alert("Search failed! Please enter city with care.");
+  localStorage.removeItem("city");
 });
 
 //Onclick function for search input
@@ -166,14 +167,17 @@ function btnClear(){
   var cBtn = $("<li>").attr({class: "list-group-item list-group-item-action nav-item", id: "clearBtn"}).html("Clear");
   $(".list-group").append(cBtn);
   $(cBtn).on("click", function() {
-    cities = [];
-    city = undefined;
-    localStorage.removeItem("city");
-    localStorage.removeItem("cities");
-    $(".list-group").empty();
-    cardCol.empty();
-    subCol.empty();
-    $("#secHeader").remove();
+    var check = confirm("Are you sure?");
+    if (check){
+      cities = [];
+      city = undefined;
+      localStorage.removeItem("city");
+      localStorage.removeItem("cities");
+      $(".list-group").empty();
+      cardCol.empty();
+      subCol.empty();
+      $("#secHeader").remove();
+    }
   });
 }
 

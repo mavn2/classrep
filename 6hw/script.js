@@ -19,6 +19,11 @@ var city;
 //Checks for initial search to display
 checkStorage();
 
+//Alerts if search fails
+$(document).ajaxError(function(){
+  alert("Search failed! Please enter city with care.");
+});
+
 //Onclick function for search input
 sBtn.on("click", function() {
   sTerm = sInput.val().trim();

@@ -20,13 +20,16 @@ The application code is stored in the 6hw folder in the classrep repository on m
 The additional repository used for storage is located at [https://github.com/mavn2/weatherkey](https://github.com/mavn2/weatherkey).
 
 Search functionality:
+
 ![Gif showing several searches entered](https://media.giphy.com/media/U7saY538QnbyU6FHDi/giphy.gif)
 
 Local storage functionality:
+
 ![Gif showing cities search from buttons, and re-rendered on refresh despite search error](https://media.giphy.com/media/YMv6Tr9s3Imf1usyQX/giphy.gif)
 
 Clear button:
-[Gif showing clear button functionality](https://media.giphy.com/media/YMv6Tr9s3Imf1usyQX/giphy.gif)
+
+[Gif showing clear button functionality](https://media.giphy.com/media/W2DtouNTPc04OOJuEx/giphy.gif)
 
 ## Tests
 
